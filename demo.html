@@ -42,7 +42,8 @@
                 <a href="./index.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Home</a>
                 <a href="./howItWorks.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">How It
                     Works</a>
-                <a href="./technology.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Technology</a>
+                <a href="./technology.html"
+                    class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Technology</a>
                 <a href="./demo.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Demo</a>
                 <a href="./about.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">About</a>
                 <a href="./contact.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Contact</a>
@@ -63,79 +64,87 @@
             </button>
         </div>
     </nav>
-    <section class="min-h-screen py-16">
+
+    <main class="flex-grow py-16">
         <div class="container mx-auto px-4">
             <!-- Header -->
-            <div class="text-center mb-16">
+            <div class="text-center mb-12">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                    How <span
-                        class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">SizeAI</span>
-                    Works
+                    Try Our <span class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">AI Demo</span>
                 </h1>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Our AI-powered system predicts your perfect size in four simple steps.
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Enter your measurements and get instant size recommendations.
                 </p>
             </div>
 
-            <!-- Steps -->
-            <div class="max-w-4xl mx-auto space-y-10">
-                <!-- Step 1 -->
-                <div class="p-8 border rounded-xl bg-white shadow hover:shadow-lg transition">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="relative flex-shrink-0">
-                            <div
-                                class="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-2xl font-bold shadow-md">
-                                1</div>
-                        </div>
+            <!-- Form & Result -->
+            <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Form -->
+                <div class="rounded-lg border bg-card shadow-sm p-8">
+                    <h2 class="text-2xl font-bold mb-6">Your Information</h2>
+                    <form class="space-y-6">
                         <div>
-                            <h3 class="text-2xl font-semibold mb-2">Step By Step Guide</h3>
-                            <p class="text-gray-600 mb-3">
-                                Input your height, weight, and body type for more accurate results.
-                            </p>
-                            <ul class="grid grid-cols-2 gap-2 text-sm text-gray-500">
-                                <li>• Height</li>
-                                <li>• Weight</li>
-                                <li>• Body Shape</li>
-                                <li>• Fit Preference</li>
-                            </ul>
+                            <label for="height" class="text-sm font-medium">Height (cm)</label>
+                            <input id="height" type="number" placeholder="170"
+                                class="mt-2 w-full h-10 rounded-md border px-3 py-2 text-sm focus:ring-2 focus:ring-ring" />
                         </div>
-                    </div>
+
+                        <div>
+                            <label for="weight" class="text-sm font-medium">Weight (kg)</label>
+                            <input id="weight" type="number" placeholder="70"
+                                class="mt-2 w-full h-10 rounded-md border px-3 py-2 text-sm focus:ring-2 focus:ring-ring" />
+                        </div>
+
+                        <div>
+                            <label class="text-sm font-medium">Brand</label>
+                            <select class="mt-2 w-full h-10 rounded-md border px-3 py-2 text-sm bg-background">
+                                <option>Select a brand</option>
+                                <option>Nike</option>
+                                <option>Adidas</option>
+                                <option>Levi’s</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="text-sm font-medium">Fit Preference</label>
+                            <select class="mt-2 w-full h-10 rounded-md border px-3 py-2 text-sm bg-background">
+                                <option>Select fit preference</option>
+                                <option>Slim</option>
+                                <option>Regular</option>
+                                <option>Relaxed</option>
+                            </select>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full h-11 rounded-md font-semibold text-primary-foreground bg-gradient-hero hover:opacity-90 shadow-glow transition-all duration-300 hover:scale-105">
+                            Get Recommendation
+                        </button>
+                    </form>
                 </div>
 
-                
-
-            <!-- Stats Section -->
-            <div class="mt-20 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-3xl p-12">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-4">The Science Behind Perfect Fits</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
-                        Our technology combines multiple data sources to deliver unmatched accuracy.
+                <!-- Recommendation Box -->
+                <div
+                    class="rounded-lg border text-card-foreground shadow-sm p-8 bg-gradient-subtle flex flex-col items-center justify-center text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-muted-foreground mb-4" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" x2="12" y1="8" y2="12" />
+                        <line x1="12" x2="12.01" y1="16" y2="16" />
+                    </svg>
+                    <p class="text-muted-foreground">
+                        Fill in your information and click <strong>Get Recommendation</strong> to see your perfect size!
                     </p>
                 </div>
-
-                <div class="grid md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
-                    <div>
-                        <div
-                            class="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                            95%</div>
-                        <p class="text-gray-500 text-sm">Accuracy Rate</p>
-                    </div>
-                    <div>
-                        <div
-                            class="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                            500+</div>
-                        <p class="text-gray-500 text-sm">Brands Supported</p>
-                    </div>
-                    <div>
-                        <div
-                            class="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                            1M+</div>
-                        <p class="text-gray-500 text-sm">Recommendations Made</p>
-                    </div>
-                </div>
             </div>
+
+            <!-- Note -->
+            <p class="mt-12 max-w-3xl mx-auto text-center text-sm text-muted-foreground">
+                <strong>Note:</strong> This demo uses mock data. The real SizeAI model is trained on anonymized,
+                real-world data for accuracy.
+            </p>
         </div>
-    </section>
+    </main>
+
 
     <footer class="bg-gradient-to-b from-gray-50 to-gray-100 border-t mt-12">
         <div class="container mx-auto px-4 py-12">
@@ -155,10 +164,10 @@
                 <div>
                     <h3 class="font-semibold mb-4 text-gray-800">Quick Links</h3>
                     <ul class="space-y-2">
-                        <li><a href="./index.html" class="hover:text-indigo-500 transition">Home</a></li>
-                        <li><a href="./how-it-works.html" class="hover:text-indigo-500 transition">How It Works</a></li>
-                        <li><a href="./technology.html" class="hover:text-indigo-500 transition">Technology</a></li>
-                        <li><a href="./demo.html" class="hover:text-indigo-500 transition">Demo</a></li>
+                        <li><a href="/" class="hover:text-indigo-500 transition">Home</a></li>
+                        <li><a href="/how-it-works" class="hover:text-indigo-500 transition">How It Works</a></li>
+                        <li><a href="/technology" class="hover:text-indigo-500 transition">Technology</a></li>
+                        <li><a href="/demo" class="hover:text-indigo-500 transition">Demo</a></li>
                     </ul>
                 </div>
 

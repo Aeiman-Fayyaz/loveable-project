@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#06b6d4',
+                    },
+                },
+            },
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b shadow-sm">
+        <div class="container mx-auto flex items-center justify-between h-16 px-4">
+            <!-- Logo -->
+            <a href="/" class="flex items-center space-x-2">
+                <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg shadow-md"></div>
+                <span
+                    class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
+                    SizeAI
+                </span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-1">
+                <a href="./index.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Home</a>
+                <a href="./howItWorks.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">How It
+                    Works</a>
+                <a href="./technology.html"
+                    class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Technology</a>
+                <a href="./demo.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Demo</a>
+                <a href="./about.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">About</a>
+                <a href="./contact.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Contact</a>
+                <a href="./login.html"
+                    class="ml-4 px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 shadow transition">
+                    Login
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <main class="flex-grow py-16">
+        <section class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                    Get in <span class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">Touch</span>
+                </h1>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Have questions? We'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Contact Form -->
+                <div class="lg:col-span-2 bg-card border rounded-lg shadow-sm p-8">
+                    <h2 class="text-2xl font-bold mb-6">Send us a Message</h2>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="text-sm font-medium">Name</label>
+                                <input id="name" placeholder="John Doe"
+                                    class="mt-2 w-full h-10 rounded-md border px-3 py-2 text-sm focus:ring-2 focus:ring-ring focus:ring-offset-2" />
+                            </div>
+                            <div>
+                                <label for="email" class="text-sm font-medium">Email</label>
+                                <input id="email" type="email" placeholder="john@example.com"
+                                    class="mt-2 w-full h-10 rounded-md border px-3 py-2 text-sm focus:ring-2 focus:ring-ring focus:ring-offset-2" />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="text-sm font-medium">Subject</label>
+                            <input id="subject" placeholder="How can we help?"
+                                class="mt-2 w-full h-10 rounded-md border px-3 py-2 text-sm focus:ring-2 focus:ring-ring focus:ring-offset-2" />
+                        </div>
+
+                        <div>
+                            <label for="message" class="text-sm font-medium">Message</label>
+                            <textarea id="message" rows="6" placeholder="Tell us more..."
+                                class="mt-2 w-full rounded-md border px-3 py-2 text-sm focus:ring-2 focus:ring-ring focus:ring-offset-2"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full h-11 rounded-md bg-gradient-hero text-primary-foreground font-semibold shadow-glow hover:opacity-90 transition-all duration-300 hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-6">
+                    <div class="bg-gradient-subtle border rounded-lg shadow-sm p-6">
+                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                        <div class="space-y-5 text-sm">
+                            <a href="mailto:hello@sizeai.com" class="flex items-center gap-3 group">
+                                <div
+                                    class="w-10 h-10 bg-gradient-hero rounded-lg flex justify-center items-center shadow-glow group-hover:scale-110 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-foreground"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                                        <path d="m22 7-10 6L2 7" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Email</p>
+                                    <p class="text-muted-foreground">hello@sizeai.com</p>
+                                </div>
+                            </a>
+
+                            <a href="tel:+15551234567" class="flex items-center gap-3 group">
+                                <div
+                                    class="w-10 h-10 bg-gradient-hero rounded-lg flex justify-center items-center shadow-glow group-hover:scale-110 transition">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-foreground"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 20 20 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.22 5.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Phone</p>
+                                    <p class="text-muted-foreground">+1 (555) 123-4567</p>
+                                </div>
+                            </a>
+
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 bg-gradient-hero rounded-lg flex justify-center items-center shadow-glow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-foreground"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path
+                                            d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="font-semibold">Office</p>
+                                    <p class="text-muted-foreground">123 AI Street, San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="border rounded-lg bg-card p-6 shadow-sm">
+                        <h3 class="text-xl font-bold mb-4">Business Hours</h3>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between"><span>Mon–Fri</span><span>9:00 AM – 6:00 PM</span></div>
+                            <div class="flex justify-between"><span>Saturday</span><span>10:00 AM – 4:00 PM</span></div>
+                            <div class="flex justify-between"><span>Sunday</span><span>Closed</span></div>
+                        </div>
+                    </div>
+
+                    <div class="border-2 border-primary/20 rounded-lg bg-card p-6 shadow-sm">
+                        <h3 class="text-xl font-bold mb-2">Need Immediate Help?</h3>
+                        <p class="text-sm text-muted-foreground mb-4">Check our FAQ or demo to see how SizeAI works.</p>
+                        <button
+                            class="w-full border rounded-md py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition">
+                            Visit FAQ
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-b from-gray-50 to-gray-100 border-t mt-12">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid gap-8 md:grid-cols-4 text-sm text-gray-600">
+
+                <!-- Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg shadow-md"></div>
+                        <span
+                            class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">SizeAI</span>
+                    </div>
+                    <p>AI-powered size recommendations for perfect fits every time.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-semibold mb-4 text-gray-800">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/" class="hover:text-indigo-500 transition">Home</a></li>
+                        <li><a href="/how-it-works" class="hover:text-indigo-500 transition">How It Works</a></li>
+                        <li><a href="/technology" class="hover:text-indigo-500 transition">Technology</a></li>
+                        <li><a href="/demo" class="hover:text-indigo-500 transition">Demo</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h3 class="font-semibold mb-4 text-gray-800">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/about" class="hover:text-indigo-500 transition">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-indigo-500 transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-indigo-500 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-indigo-500 transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div>
+                    <h3 class="font-semibold mb-4 text-gray-800">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
+                            aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
+                            aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
+                            aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom -->
+            <div class="mt-8 pt-8 border-t text-center text-gray-500 text-sm">
+                © 2025 <span class="font-semibold text-gray-700">SizeAI</span>. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
