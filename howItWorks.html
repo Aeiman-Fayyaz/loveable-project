@@ -2,213 +2,423 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SizeAI | How It Works</title>
+
+    <!-- Our Stylesheet -->
+     <link rel="stylesheet" href="./styles/style.css">
+
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Aweosome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config (your exact colors) -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4f46e5',
-                        secondary: '#06b6d4',
+                        navy: '#192A56',
+                        coral: '#F4978E',
+                        peach: '#FFDAB9',
+                        blush: '#FFF0EB',
                     },
-                },
-            },
+                    boxShadow: {
+                        'soft-1': '0 6px 18px rgba(25,42,86,0.10)',
+                        'soft-2': '0 12px 30px rgba(25,42,86,0.10)',
+                        'glow-coral': '0 10px 30px rgba(244,149,142,0.18)',
+                        'inset-soft': 'inset 6px 6px 12px rgba(0,0,0,0.03), inset -6px -6px 12px rgba(255,255,255,0.7)'
+                    },
+                    backgroundImage: {
+                        'navy-grad': 'linear-gradient(180deg,#192A56 0%, #2a386f 100%)',
+                        'footer-grad': 'linear-gradient(180deg,#152041 0%, #192A56 100%)',
+                        'hero-overlay': 'linear-gradient(180deg, rgba(25,42,86,0.18), rgba(25,42,86,0.10))'
+                    }
+                }
+            }
         }
     </script>
-
 </head>
 
-<body>
+<body class="bg-[#FFF0EB] text-[#192A56]">
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b shadow-sm">
-        <div class="container mx-auto flex items-center justify-between h-16 px-4">
-            <!-- Logo -->
-            <a href="/" class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg shadow-md"></div>
-                <span
-                    class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
-                    SizeAI
-                </span>
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between nav-shadow glass">
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg"
+                    style="background:linear-gradient(90deg,var(--coral),var(--peach)); box-shadow: 0 6px 18px rgba(25,42,86,0.08)">
+                </div>
+                <div>
+                    <div class="text-lg font-semibold"
+                        style="background:linear-gradient(90deg,var(--coral),var(--peach)); -webkit-background-clip:text; background-clip:text; color:transparent">
+                        SizeAI</div>
+                    <div class="text-xs muted">Fit that's personal</div>
+                </div>
             </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-1">
-                <a href="./index.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Home</a>
-                <a href="./howItWorks.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">How It
+            <div class="hidden md:flex items-center gap-4">
+                <a href="./index.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
+                <a href="./howItWorks.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It
                     Works</a>
-                <a href="./technology.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Technology</a>
-                <a href="./demo.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Demo</a>
-                <a href="./about.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">About</a>
-                <a href="./contact.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Contact</a>
-                <a href="./login.html"
-                    class="ml-4 px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 shadow transition">
-                    Login
-                </a>
+                <a href="./technology.html"
+                    class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Technology</a>
+                <a href="./demo.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Demo</a>
+                <a href="#contact" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
+
+                <!-- Buttons: primary (soft raised) + flat -->
+                <div class="flex items-center gap-3">
+                    <a href="/login" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
+                    <a href="/demo" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
+                </div>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden p-2" aria-label="Toggle menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="4" x2="20" y1="6" y2="6" />
-                    <line x1="4" x2="20" y1="12" y2="12" />
-                    <line x1="4" x2="20" y1="18" y2="18" />
+            <!-- Mobile toggle -->
+            <button class="md:hidden p-2 btn-flat" aria-label="Open menu"
+                onclick="document.body.classList.toggle('menu-open')">
+                <!-- simple hamburger svg outline (navy) -->
+                <svg width="20" height="14" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    stroke="currentColor" stroke-width="1.6" style="color:var(--navy)">
+                    <path d="M2 2h20M2 8h20M2 14h20" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </button>
-        </div>
-    </nav>
-    <section class="min-h-screen py-16">
-        <div class="container mx-auto px-4">
-            <!-- Header -->
-            <div class="text-center mb-16">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                    How <span
-                        class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">SizeAI</span>
-                    Works
-                </h1>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    Our AI-powered system predicts your perfect size in four simple steps.
-                </p>
-            </div>
+        </nav>
+    </header>
+    <main id="top" class="pt-8">
 
-            <!-- Steps -->
-            <div class="max-w-4xl mx-auto space-y-10">
-                <!-- Step 1 -->
-                <div class="p-8 border rounded-xl bg-white shadow hover:shadow-lg transition">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="relative flex-shrink-0">
-                            <div
-                                class="w-16 h-16 flex items-center justify-center rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-2xl font-bold shadow-md">
-                                1</div>
+        <!-- HERO / Intro -->
+        <section class="container mx-auto px-4 py-12 md:py-20">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+                        The <span
+                            style="background: linear-gradient(90deg,#192A56,#192A56); -webkit-background-clip:text; background-clip:text; color:transparent">Technology</span>
+                        Behind SizeAI
+                    </h1>
+                    <p class="mt-4 text-lg text-[#192A56]/80 max-w-2xl">
+                        Advanced machine learning and data science deliver fast, brand-specific size recommendations
+                        that reduce returns and increase customer confidence.
+                    </p>
+
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <a href="#demo"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-white font-semibold"
+                            style="background: linear-gradient(90deg,#F4978E,#FFDAB9); box-shadow:0 10px 30px rgba(244,149,142,0.16)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Try Demo
+                        </a>
+                        <a href="#how"
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-[#192A56] bg-white/60 backdrop-blur-sm border border-white/30">How
+                            it works</a>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- small dashboard preview glass card -->
+                    <div class="rounded-2xl p-6 bg-white/60 backdrop-blur-md border border-white/30 shadow-lg">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <div class="text-sm text-[#192A56]/70">Welcome back,</div>
+                                <div class="text-lg font-semibold">Alex Morgan</div>
+                            </div>
+                            <div class="text-sm text-[#192A56]/70">Pro • Member</div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-3">
+                            <div class="p-3 rounded-lg bg-white/50 border border-white/20">
+                                <div class="text-sm text-[#192A56]/70">Recommended</div>
+                                <div class="text-sm font-semibold">M (Aster)</div>
+                            </div>
+                            <div class="p-3 rounded-lg bg-white/50 border border-white/20">
+                                <div class="text-sm text-[#192A56]/70">Measurements</div>
+                                <div class="text-sm font-semibold">Chest 36" • Waist 29"</div>
+                            </div>
+                            <div class="p-3 rounded-lg bg-white/50 border border-white/20">
+                                <div class="text-sm text-[#192A56]/70">Avg. Time</div>
+                                <div class="text-sm font-semibold">~2 sec</div>
+                            </div>
+                            <div class="p-3 rounded-lg bg-white/50 border border-white/20">
+                                <div class="text-sm text-[#192A56]/70">Privacy</div>
+                                <div class="text-sm font-semibold">Encrypted</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 flex gap-2">
+                            <a class="px-3 py-2 rounded-md text-white text-sm"
+                                style="background: linear-gradient(90deg,#F4978E,#FFDAB9)">Get Recommendation</a>
+                            <a
+                                class="px-3 py-2 rounded-md text-[#192A56] bg-white/60 border border-white/30 text-sm">History</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNOLOGY SECTION -->
+        <section id="technology" class="container mx-auto px-4 py-12 md:py-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold">Our AI Prediction Flow</h2>
+                    <p class="mt-3 text-[#192A56]/75 max-w-2xl mx-auto">How user inputs turn into accurate
+                        recommendations.</p>
+                </div>
+
+                <div
+                    class="rounded-2xl bg-white/60 backdrop-blur-md border border-white/30 p-6 shadow-sm overflow-hidden">
+                    <div class="text-center mb-6">
+                        <!-- placeholder image -->
+                        <img src="/assets/ai-flow-29RrjjTR.jpg" alt="AI flow"
+                            class="w-full max-w-3xl mx-auto rounded-lg shadow-md" />
+                    </div>
+
+                    <div class="mt-8 grid md:grid-cols-3 gap-6 text-center">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-[#192A56]">Input Layer</h3>
+                            <p class="text-sm text-[#192A56]/75 mt-2">User measurements, preferences, brand selection.
+                            </p>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-[#192A56]">Processing Layer</h3>
+                            <p class="text-sm text-[#192A56]/75 mt-2">Neural networks analyze patterns & brand fit
+                                correlations.</p>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg text-[#192A56]">Output Layer</h3>
+                            <p class="text-sm text-[#192A56]/75 mt-2">Size recommendation + confidence score.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="mt-10 grid md:grid-cols-3 gap-6 text-center">
+                    <div class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
+                        <div class="text-4xl font-bold"
+                            style="background: linear-gradient(90deg,#F4978E,#FFDAB9); -webkit-background-clip:text; color:transparent">
+                            95%</div>
+                        <p class="mt-2 text-sm text-[#192A56]/75">Accuracy Rate</p>
+                    </div>
+                    <div class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
+                        <div class="text-4xl font-bold"
+                            style="background: linear-gradient(90deg,#F4978E,#FFDAB9); -webkit-background-clip:text; color:transparent">
+                            500+</div>
+                        <p class="mt-2 text-sm text-[#192A56]/75">Brands Supported</p>
+                    </div>
+                    <div class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
+                        <div class="text-4xl font-bold"
+                            style="background: linear-gradient(90deg,#F4978E,#FFDAB9); -webkit-background-clip:text; color:transparent">
+                            1M+</div>
+                        <p class="mt-2 text-sm text-[#192A56]/75">Recommendations Made</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEMO SECTION -->
+        <section id="demo" class="container mx-auto px-4 py-12 md:py-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold">Try Our AI Demo</h2>
+                    <p class="mt-3 text-[#192A56]/75 max-w-2xl mx-auto">Enter measurements and get instant, brand-aware
+                        size suggestions.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 items-start">
+                    <!-- form -->
+                    <div class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
+                        <h3 class="text-2xl font-semibold mb-4">Your Information</h3>
+                        <form id="demoForm" class="space-y-4">
+                            <div>
+                                <label for="height" class="text-sm font-medium">Height (cm)</label>
+                                <input id="height" name="height" type="number" placeholder="170"
+                                    class="mt-2 w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDAB9]/50" />
+                            </div>
+
+                            <div>
+                                <label for="weight" class="text-sm font-medium">Weight (kg)</label>
+                                <input id="weight" name="weight" type="number" placeholder="70"
+                                    class="mt-2 w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDAB9]/50" />
+                            </div>
+
+                            <div>
+                                <label for="brand" class="text-sm font-medium">Brand</label>
+                                <select id="brand" name="brand" class="mt-2 w-full rounded-lg border px-3 py-2 text-sm">
+                                    <option value="">Select a brand</option>
+                                    <option>Nike</option>
+                                    <option>Adidas</option>
+                                    <option>Levi's</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="fit" class="text-sm font-medium">Fit Preference</label>
+                                <select id="fit" name="fit" class="mt-2 w-full rounded-lg border px-3 py-2 text-sm">
+                                    <option value="">Select fit preference</option>
+                                    <option>Slim</option>
+                                    <option>Regular</option>
+                                    <option>Relaxed</option>
+                                </select>
+                            </div>
+
+                            <div class="pt-2">
+                                <button type="submit" class="w-full rounded-lg py-3 font-semibold text-white"
+                                    style="background: linear-gradient(90deg,#F4978E,#FFDAB9); box-shadow: 0 10px 30px rgba(244,149,142,0.14)">Get
+                                    Recommendation</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- result -->
+                    <div id="recommendationBox"
+                        class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-[#192A56]/40 mb-4"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8v4l2 2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <p class="text-[#192A56]/75 mb-4">Fill the form and click <strong>Get Recommendation</strong> to
+                            see your suggested size.</p>
+
+                        <div id="resultCard" class="hidden rounded-xl p-4 bg-white/70 border border-white/20">
+                            <div class="text-sm text-[#192A56]/70">Recommended Size</div>
+                            <div class="text-2xl font-bold">M</div>
+                            <div class="mt-2 text-sm text-[#192A56]/75">Brand: Aster • Confidence: 92%</div>
+                            <div class="mt-4 flex justify-center gap-3">
+                                <button id="saveBtn"
+                                    class="px-4 py-2 rounded-md text-sm bg-white/80 border">Save</button>
+                                <button id="recheckBtn" class="px-4 py-2 rounded-md text-sm"
+                                    style="background: linear-gradient(90deg,#F4978E,#FFDAB9); color:white">Re-check</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-6 text-sm text-[#192A56]/70">Note: This demo uses mock logic. Replace with your real model
+                    inference or API response to power recommendations.</p>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS SECTION -->
+        <section id="how" class="container mx-auto px-4 py-12 md:py-20">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold">How It Works — At a Glance</h2>
+                    <p class="mt-2 text-[#192A56]/75">Simple flow from measurements to size confidence.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="rounded-2xl p-6 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">1. Data Collection & Training</h3>
+                        <p class="text-sm text-[#192A56]/75">We use anonymized sizing data from millions of shoppers
+                            across brands and body types to train robust models.</p>
+                    </div>
+
+                    <div class="rounded-2xl p-6 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">2. Feature Engineering</h3>
+                        <p class="text-sm text-[#192A56]/75">Proportions, brand consistency, and fit preferences are
+                            engineered into predictive features.</p>
+                    </div>
+
+                    <div class="rounded-2xl p-6 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">3. Model Architecture</h3>
+                        <p class="text-sm text-[#192A56]/75">Multi-layer networks with dropout and calibration produce
+                            size predictions and confidence scores.</p>
+                    </div>
+
+                    <div class="rounded-2xl p-6 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
+                        <h3 class="text-xl font-semibold mb-2">4. Delivery & UX</h3>
+                        <p class="text-sm text-[#192A56]/75">Recommendations are surfaced in a clear UI with suggested
+                            size, brand mapping and a confidence indicator.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" class="fixed bottom-6 right-6 hidden items-center gap-2 px-3 py-2 rounded-full text-white"
+        style="background: linear-gradient(90deg,#F4978E,#FFDAB9); box-shadow:0 10px 30px rgba(244,149,142,0.16)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M12 5l-7 7h14l-7-7z" fill="white" />
+        </svg>
+    </button>
+
+    <!-- FOOTER -->
+    <footer class="bg-gradient-to-b from-[#FFF0EB] to-[#FFDAB9] border-t mt-12">
+        <div class="container mx-auto px-4 py-10">
+            <div class="grid md:grid-cols-4 gap-6 text-[#192A56]/85">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg" style="background:linear-gradient(90deg,#F4978E,#FFDAB9)">
                         </div>
                         <div>
-                            <h3 class="text-2xl font-semibold mb-2">Step By Step Guide</h3>
-                            <p class="text-gray-600 mb-3">
-                                Input your height, weight, and body type for more accurate results.
-                            </p>
-                            <ul class="grid grid-cols-2 gap-2 text-sm text-gray-500">
-                                <li>• Height</li>
-                                <li>• Weight</li>
-                                <li>• Body Shape</li>
-                                <li>• Fit Preference</li>
-                            </ul>
+                            <div class="font-semibold">SizeAI</div>
+                            <div class="text-sm text-[#192A56]/60">Perfect fit, every time</div>
                         </div>
                     </div>
+                    <p class="mt-4 text-sm text-[#192A56]/70">AI-powered size recommendations to reduce returns and
+                        increase confidence.</p>
                 </div>
 
-                
-
-            <!-- Stats Section -->
-            <div class="mt-20 bg-gradient-to-r from-indigo-50 to-purple-50 rounded-3xl p-12">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold mb-4">The Science Behind Perfect Fits</h2>
-                    <p class="text-gray-600 max-w-2xl mx-auto">
-                        Our technology combines multiple data sources to deliver unmatched accuracy.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8 text-center max-w-4xl mx-auto">
-                    <div>
-                        <div
-                            class="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                            95%</div>
-                        <p class="text-gray-500 text-sm">Accuracy Rate</p>
-                    </div>
-                    <div>
-                        <div
-                            class="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                            500+</div>
-                        <p class="text-gray-500 text-sm">Brands Supported</p>
-                    </div>
-                    <div>
-                        <div
-                            class="text-4xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
-                            1M+</div>
-                        <p class="text-gray-500 text-sm">Recommendations Made</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gradient-to-b from-gray-50 to-gray-100 border-t mt-12">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid gap-8 md:grid-cols-4 text-sm text-gray-600">
-
-                <!-- Brand -->
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg shadow-md"></div>
-                        <span
-                            class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">SizeAI</span>
-                    </div>
-                    <p>AI-powered size recommendations for perfect fits every time.</p>
-                </div>
-
-                <!-- Quick Links -->
                 <div>
-                    <h3 class="font-semibold mb-4 text-gray-800">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="./index.html" class="hover:text-indigo-500 transition">Home</a></li>
-                        <li><a href="./how-it-works.html" class="hover:text-indigo-500 transition">How It Works</a></li>
-                        <li><a href="./technology.html" class="hover:text-indigo-500 transition">Technology</a></li>
-                        <li><a href="./demo.html" class="hover:text-indigo-500 transition">Demo</a></li>
+                    <h4 class="font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#technology" class="hover:text-[#F4978E]">Technology</a></li>
+                        <li><a href="#demo" class="hover:text-[#F4978E]">Demo</a></li>
+                        <li><a href="#how" class="hover:text-[#F4978E]">How It Works</a></li>
+                        <li><a href="./about.html" class="hover:text-[#F4978E]">About</a></li>
                     </ul>
                 </div>
 
-                <!-- Company -->
                 <div>
-                    <h3 class="font-semibold mb-4 text-gray-800">Company</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/about" class="hover:text-indigo-500 transition">About Us</a></li>
-                        <li><a href="/contact" class="hover:text-indigo-500 transition">Contact</a></li>
-                        <li><a href="#" class="hover:text-indigo-500 transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-indigo-500 transition">Terms of Service</a></li>
+                    <h4 class="font-semibold mb-3">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./contact.html" class="hover:text-[#F4978E]">Contact</a></li>
+                        <li><a href="#" class="hover:text-[#F4978E]">Privacy</a></li>
+                        <li><a href="#" class="hover:text-[#F4978E]">Terms</a></li>
                     </ul>
                 </div>
 
-                <!-- Social -->
                 <div>
-                    <h3 class="font-semibold mb-4 text-gray-800">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                    <h4 class="font-semibold mb-3">Follow Us</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-facebook-f" style="color:#192A56"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-twitter" style="color:#192A56"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-linkedin-in" style="color:#192A56"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-instagram" style="color:#192A56"></i></a>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Bottom -->
-            <div class="mt-8 pt-8 border-t text-center text-gray-500 text-sm">
-                © 2025 <span class="font-semibold text-gray-700">SizeAI</span>. All rights reserved.
+            <div class="mt-8 text-center text-sm text-[#192A56]/60">© 2025 <strong>SizeAI</strong>. All rights reserved.
             </div>
         </div>
     </footer>
 
+    <!-- Minimal JS: mobile menu, demo mock logic, scroll handling -->
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileToggle?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    </script>
 </body>
 
 </html>

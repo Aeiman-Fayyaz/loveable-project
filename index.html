@@ -2,268 +2,523 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SizeAI — Home</title>
+
+    <!-- Our Stylesheet -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <!-- Font Aweosome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config (your exact colors) -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4f46e5',
-                        secondary: '#06b6d4',
+                        navy: '#192A56',
+                        coral: '#F4978E',
+                        peach: '#FFDAB9',
+                        blush: '#FFF0EB',
                     },
-                },
-            },
+                    boxShadow: {
+                        'soft-1': '0 6px 18px rgba(25,42,86,0.10)',
+                        'soft-2': '0 12px 30px rgba(25,42,86,0.10)',
+                        'glow-coral': '0 10px 30px rgba(244,149,142,0.18)',
+                        'inset-soft': 'inset 6px 6px 12px rgba(0,0,0,0.03), inset -6px -6px 12px rgba(255,255,255,0.7)'
+                    },
+                    backgroundImage: {
+                        'navy-grad': 'linear-gradient(180deg,#192A56 0%, #2a386f 100%)',
+                        'footer-grad': 'linear-gradient(180deg,#152041 0%, #192A56 100%)',
+                        'hero-overlay': 'linear-gradient(180deg, rgba(25,42,86,0.18), rgba(25,42,86,0.10))'
+                    }
+                }
+            }
         }
     </script>
 
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+    </style>
 </head>
 
 <body>
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b shadow-sm">
-        <div class="container mx-auto flex items-center justify-between h-16 px-4">
-            <!-- Logo -->
-            <a href="/" class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg shadow-md"></div>
-                <span
-                    class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
-                    SizeAI
-                </span>
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between nav-shadow glass">
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg"
+                    style="background:linear-gradient(90deg,var(--coral),var(--peach)); box-shadow: 0 6px 18px rgba(25,42,86,0.08)">
+                </div>
+                <div>
+                    <div class="text-lg font-semibold"
+                        style="background:linear-gradient(90deg,var(--coral),var(--peach)); -webkit-background-clip:text; background-clip:text; color:transparent">
+                        SizeAI</div>
+                    <div class="text-xs muted">Fit that's personal</div>
+                </div>
             </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-1">
-                <a href="#" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Home</a>
-                <a href="./howItWorks.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">How It
-                    Works</a>
-                <a href="./technology.html"
-                    class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Technology</a>
-                <a href="./demo.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Demo</a>
-                <a href="./about.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">About</a>
-                <a href="./contact.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Contact</a>
-                <a href="./login.html"
-                    class="ml-4 px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 shadow transition">
-                    Login
-                </a>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="./index.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
+                <a href="./howItWorks.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It Works</a>
+                <a href="./technology.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Technology</a>
+                <a href="./demo.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Demo</a>
+                <a href="#contact" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
+
+                <!-- Buttons: primary (soft raised) + flat -->
+                <div class="flex items-center gap-3">
+                    <a href="/login" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
+                    <a href="/demo" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
+                </div>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden p-2" aria-label="Toggle menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="4" x2="20" y1="6" y2="6" />
-                    <line x1="4" x2="20" y1="12" y2="12" />
-                    <line x1="4" x2="20" y1="18" y2="18" />
+            <!-- Mobile toggle -->
+            <button class="md:hidden p-2 btn-flat" aria-label="Open menu"
+                onclick="document.body.classList.toggle('menu-open')">
+                <!-- simple hamburger svg outline (navy) -->
+                <svg width="20" height="14" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    stroke="currentColor" stroke-width="1.6" style="color:var(--navy)">
+                    <path d="M2 2h20M2 8h20M2 14h20" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </button>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section class="relative z-10 container mx-auto px-4 py-24 md:py-32 text-center">
-        <div class="max-w-3xl mx-auto space-y-8">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
-                Find Your
-                <span class="bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
-                    Perfect Fit
-                </span>
-                with AI
-            </h1>
+    <!-- HERO: navy gradient with glass panel -->
+    <section class="relative">
+        <div class="bg-navy-grad text-white">
+            <div class="container mx-auto px-4 hero-clip">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-16">
+                    <!-- left: text -->
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-md">
+                            Find Your <span
+                                style="background:linear-gradient(90deg,var(--peach),var(--coral)); -webkit-background-clip:text; background-clip:text; color:transparent">Perfect
+                                Fit</span> with AI
+                        </h1>
+                        <p class="mt-4 text-lg max-w-xl ">
+                            Say goodbye to returns. SizeAI analyzes your measurements, brand fits and reviews to
+                            recommend the size that's right for *you*.
+                        </p>
 
-            <p class="text-lg md:text-xl text-gray-600">
-                Say goodbye to returns. Our AI-powered size recommendation tool analyzes your measurements and suggests
-                the perfect size for any brand.
-            </p>
+                        <div class="mt-8 flex flex-col sm:flex-row items-center sm:items-start gap-3">
+                            <a href="#demo" class="btn-primary px-6 py-3 inline-flex items-center gap-3">
+                                <!-- icon (white) -->
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="rgba(255,255,255,0.96)" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Try Demo
+                            </a>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="/demo"
-                    class="inline-flex items-center justify-center px-8 h-11 rounded-md text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-blue-500 hover:opacity-90 shadow-md transition-transform duration-300 hover:scale-105 w-full sm:w-auto">
-                    Try Demo Now
-                </a>
+                            <a href="#how" class="btn-flat px-5 py-3 inline-flex items-center gap-3">
+                                <!-- play icon (navy) -->
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" style="color:var(--navy)">
+                                    <path d="M5 3v18l15-9L5 3z" stroke-linejoin="round" stroke-linecap="round" />
+                                </svg>
+                                How it works
+                            </a>
+                        </div>
 
-                <a href="/how-it-works"
-                    class="inline-flex items-center justify-center px-8 h-11 rounded-md text-sm font-medium border border-gray-300 bg-white hover:bg-gray-100 text-gray-800 transition w-full sm:w-auto">
-                    Learn How It Works
-                </a>
+                        <!-- small stats -->
+                        <div class="mt-8 flex gap-6 text-sm">
+                            <div
+                                class="glass px-4 py-2 rounded-lg border border-peach/30 shadow-soft-1 inline-flex items-center gap-3">
+                                <div class="text-sm font-semibold">500+</div>
+                                <div class="muted text-xs">Partner Brands</div>
+                            </div>
+                            <div
+                                class="glass px-4 py-2 rounded-lg border border-peach/30 shadow-soft-1 inline-flex items-center gap-3">
+                                <div class="text-sm font-semibold">1M+</div>
+                                <div class="muted text-xs">Happy Customers</div>
+                            </div>
+                            <div
+                                class="glass px-4 py-2 rounded-lg border border-peach/30 shadow-soft-1 inline-flex items-center gap-3">
+                                <div class="text-sm font-semibold">95%</div>
+                                <div class="muted text-xs">Accuracy</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- right: hero glass card preview (dashboard preview) -->
+                    <div class="relative">
+                        <div class="glass rounded-2xl p-6 shadow-soft-2" style="border-radius:18px;">
+                            <div class="flex items-center justify-between mb-4">
+                                <div>
+                                    <div class="text-sm muted">Welcome back,</div>
+                                    <div class="text-lg font-semibold">Alex Morgan</div>
+                                </div>
+                                <div class="text-sm muted">Member • Pro</div>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-3 rounded-lg glass border border-peach/20">
+                                    <div class="flex items-start gap-3">
+                                        <div class="icon-circle">
+                                            <!-- shirt icon (navy) -->
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="1.6" style="color:var(--navy)">
+                                                <path d="M3 7l3-2 3 2v10a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V7l3-2 3 2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm muted">Recommended</div>
+                                            <div class="text-sm font-semibold">M (Brand: Aster)</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 rounded-lg glass border border-peach/20">
+                                    <div class="flex items-start gap-3">
+                                        <div class="icon-circle">
+                                            <!-- ruler icon -->
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="1.6" style="color:var(--navy)">
+                                                <path d="M3 21l18-18M13 7l4-4M9 11l4-4M5 15l4-4" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm muted">Measurements</div>
+                                            <div class="text-sm font-semibold">Chest 36" • Waist 29"</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 rounded-lg glass border border-peach/20">
+                                    <div class="flex items-start gap-3">
+                                        <div class="icon-circle">
+                                            <!-- clock/icon -->
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="1.6" style="color:var(--navy)">
+                                                <path d="M12 7v5l3 3M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm muted">Avg. decision time</div>
+                                            <div class="text-sm font-semibold">~2 sec</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 rounded-lg glass border border-peach/20">
+                                    <div class="flex items-start gap-3">
+                                        <div class="icon-circle">
+                                            <!-- shield -->
+                                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="1.6" style="color:var(--navy)">
+                                                <path d="M12 2l7 4v6c0 5-4 9-7 11-3-2-7-6-7-11V6l7-4z"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm muted">Privacy</div>
+                                            <div class="text-sm font-semibold">Encrypted • Local-first</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 flex gap-3">
+                                <a class="btn-primary px-4 py-2 text-sm inline-flex items-center gap-2"
+                                    href="#recommend">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+                                        <path d="M5 12h14M12 5l7 7-7 7" stroke="rgba(255,255,255,0.96)"
+                                            stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    Get Recommendation
+                                </a>
+                                <a class="btn-flat px-3 py-2 text-sm inline-flex items-center gap-2"
+                                    href="#history">History</a>
+                            </div>
+                        </div>
+
+                        <!-- subtle floating mini panel behind hero card for depth -->
+                        <div class="absolute -right-6 top-6 w-28 h-28 rounded-2xl glass"
+                            style="transform:rotate(6deg); border-radius:14px; border:1px solid rgba(25,42,86,0.03); box-shadow:0 8px 30px rgba(25,42,86,0.06)">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <div class="custom-shape-divider-bottom-1762023762">
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path
-                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
-                opacity=".25" class="shape-fill-1"></path>
-            <path
-                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
-                opacity=".5" class="shape-fill-1"></path>
-            <path
-                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
-                class="shape-fill-1"></path>
-        </svg>
-    </div>
 
-    <section class="py-20 bg-gray-50">
-        <div class="container mx-auto px-4 text-center">
-            <!-- Heading -->
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose SizeAI?</h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-16">
-                Advanced technology meets fashion to ensure you always get the right fit.
-            </p>
+    <!-- FEATURES (light background with glass cards) -->
+    <section id="how" class="container mx-auto px-4 py-20">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold">Why Choose SizeAI?</h2>
+                <p class="mt-3 muted max-w-2xl mx-auto">A hybrid of vintage warmth and modern accuracy — clear
+                    suggestions, less returns.</p>
+            </div>
 
-            <!-- Features Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Feature 1 -->
-                <div class="p-6 border rounded-lg bg-white shadow-sm hover:shadow-lg transition">
-                    <div
-                        class="w-12 h-12 mb-4 flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-blue-500 text-white shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M9.9 15.5A2 2 0 0 0 8.5 14.1L2.4 12.5a.5.5 0 0 1 0-.9l6.1-1.6A2 2 0 0 0 9.9 8.5L11.5 2.4a.5.5 0 0 1 .9 0l1.6 6.1A2 2 0 0 0 15.5 9.9l6.1 1.6a.5.5 0 0 1 0 .9l-6.1 1.6a2 2 0 0 0-1.6 1.6l-1.6 6.1a.5.5 0 0 1-.9 0z" />
-                        </svg>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- card -->
+                <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
+                    <div class="flex items-start gap-4">
+                        <div class="icon-circle">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.6" style="color:var(--navy)">
+                                <path d="M12 2v20M2 12h20" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-lg font-semibold">Accurate AI</div>
+                            <div class="mt-1 muted text-sm">Models trained on real product fits and millions of user
+                                outcomes.</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">AI-Powered Accuracy</h3>
-                    <p class="text-gray-600">Our machine learning models analyze data to recommend your perfect size.
-                    </p>
                 </div>
 
-                <!-- Feature 2 -->
-                <div class="p-6 border rounded-lg bg-white shadow-sm hover:shadow-lg transition">
-                    <div
-                        class="w-12 h-12 mb-4 flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-blue-500 text-white shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <circle cx="12" cy="12" r="6" />
-                            <circle cx="12" cy="12" r="2" />
-                        </svg>
+                <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
+                    <div class="flex items-start gap-4">
+                        <div class="icon-circle">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.6" style="color:var(--navy)">
+                                <path d="M3 12h18M12 3v18" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-lg font-semibold">Brand Specific</div>
+                            <div class="mt-1 muted text-sm">Tailored size mapping per brand for reliable results.</div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Brand-Specific</h3>
-                    <p class="text-gray-600">Tailored size suggestions for each brand’s unique sizing chart.</p>
                 </div>
 
-                <!-- Feature 3 -->
-                <div class="p-6 border rounded-lg bg-white shadow-sm hover:shadow-lg transition">
-                    <div
-                        class="w-12 h-12 mb-4 flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-blue-500 text-white shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M4 14a1 1 0 0 1-.8-1.6l9.9-10.2a.5.5 0 0 1 .9.4l-1.9 6a1 1 0 0 0 1 .9h7a1 1 0 0 1 .8 1.6l-9.9 10.2a.5.5 0 0 1-.9-.4l1.9-6a1 1 0 0 0-1-.9z" />
-                        </svg>
+                <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
+                    <div class="flex items-start gap-4">
+                        <div class="icon-circle">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.6" style="color:var(--navy)">
+                                <path d="M4 4h16v12H4zM4 20h16" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-lg font-semibold">Privacy First</div>
+                            <div class="mt-1 muted text-sm">Local-first approach, encrypted data, opt-in sharing only.
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-semibold mb-2">Instant Results</h3>
-                    <p class="text-gray-600">Get your size recommendations within seconds using our fast AI engine.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="p-6 border rounded-lg bg-white shadow-sm hover:shadow-lg transition">
-                    <div
-                        class="w-12 h-12 mb-4 flex items-center justify-center rounded-lg bg-gradient-to-r from-indigo-500 to-blue-500 text-white shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.7 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.5 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Privacy Protected</h3>
-                    <p class="text-gray-600">Your data is encrypted and never shared with third parties.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="container mx-auto px-4 py-20">
-        <div class="p-12 text-center rounded-lg shadow-lg bg-gradient-to-r from-indigo-500 to-blue-500 text-white">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                Ready to Find Your Perfect Size?
-            </h2>
-            <p class="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-                Join thousands of satisfied customers who never worry about sizing again.
-            </p>
-            <a href="/demo"
-                class="inline-flex items-center justify-center px-8 h-11 text-sm font-semibold rounded-md bg-white text-indigo-600 hover:bg-gray-100 shadow-md transition duration-300">
-                Get Started Free
-            </a>
+    <!-- ABOUT -->
+    <main class="flex-grow bg-[#FFF0EB] min-h-screen py-16 font-[Inter] text-[#192A56]">
+        <div class="container mx-auto px-4">
+
+            <!-- HERO -->
+            <header class="text-center mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-[#192A56]">
+                    About <span class="text-[#F4978E]">SizeAI</span>
+                </h1>
+                <p class="text-lg text-[#192A56]/70 max-w-2xl mx-auto">
+                    We're on a mission to revolutionize online shopping with AI-powered size recommendations.
+                </p>
+            </header>
+
+            <!-- VALUES -->
+            <section class="mb-20">
+                <h2 class="text-3xl font-bold text-center mb-12 text-[#192A56]">Our Values</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- Mission -->
+                    <div
+                        class="rounded-2xl bg-white/60 backdrop-blur-md shadow-md border border-white/30 p-6 text-center hover:shadow-lg transition">
+                        <div
+                            class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-xl bg-[#FFDAB9]/70 text-[#192A56] text-2xl shadow-inner">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="font-semibold text-[#192A56] mb-2 text-lg">Our Mission</h3>
+                        <p class="text-[#192A56]/80 text-sm">To eliminate online shopping frustration by ensuring
+                            everyone gets the perfect fit.</p>
+                    </div>
+
+                    <!-- Innovation -->
+                    <div
+                        class="rounded-2xl bg-white/60 backdrop-blur-md shadow-md border border-white/30 p-6 text-center hover:shadow-lg transition">
+                        <div
+                            class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-xl bg-[#FFDAB9]/70 text-[#192A56] text-2xl shadow-inner">
+                            <i class="fa-regular fa-lightbulb"></i>
+                        </div>
+                        <h3 class="font-semibold text-[#192A56] mb-2 text-lg">Innovation</h3>
+                        <p class="text-[#192A56]/80 text-sm">We use cutting-edge AI and machine learning to solve
+                            real-world fashion challenges.</p>
+                    </div>
+
+                    <!-- Customer -->
+                    <div
+                        class="rounded-2xl bg-white/60 backdrop-blur-md shadow-md border border-white/30 p-6 text-center hover:shadow-lg transition">
+                        <div
+                            class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-xl bg-[#FFDAB9]/70 text-[#192A56] text-2xl shadow-inner">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <h3 class="font-semibold text-[#192A56] mb-2 text-lg">Customer-Centric</h3>
+                        <p class="text-[#192A56]/80 text-sm">Every decision is guided by what’s best for our users and
+                            their experience.</p>
+                    </div>
+
+                    <!-- Excellence -->
+                    <div
+                        class="rounded-2xl bg-white/60 backdrop-blur-md shadow-md border border-white/30 p-6 text-center hover:shadow-lg transition">
+                        <div
+                            class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-xl bg-[#FFDAB9]/70 text-[#192A56] text-2xl shadow-inner">
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <h3 class="font-semibold text-[#192A56] mb-2 text-lg">Excellence</h3>
+                        <p class="text-[#192A56]/80 text-sm">We’re committed to the most accurate size recommendations
+                            in the industry.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TEAM -->
+            <section class="mb-20 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-[#192A56]">Meet Our Team</h2>
+                <p class="text-[#192A56]/70 mb-12 max-w-2xl mx-auto">
+                    A diverse team of technologists, fashion experts, and data scientists united by a common goal.
+                </p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div
+                        class="rounded-2xl bg-white/60 backdrop-blur-md shadow-md border border-white/30 p-6 hover:shadow-lg transition">
+                        <h3 class="text-lg font-bold text-[#192A56] mb-1">Sarah Chen</h3>
+                        <p class="text-sm text-[#F4978E] font-medium mb-2">CEO & Co-Founder</p>
+                        <p class="text-[#192A56]/80 text-sm">Fashion tech veteran with 15 years in e-commerce.</p>
+                    </div>
+                    <div
+                        class="rounded-2xl bg-white/60 backdrop-blur-md shadow-md border border-white/30 p-6 hover:shadow-lg transition">
+                        <h3 class="text-lg font-bold text-[#192A56] mb-1">Dr. Marcus Rodriguez</h3>
+                        <p class="text-sm text-[#F4978E] font-medium mb-2">CTO & Co-Founder</p>
+                        <p class="text-[#192A56]/80 text-sm">PhD in ML from MIT; published 20+ papers on neural
+                            networks.</p>
+                    </div>
+                    <div
+                        class="rounded-2xl bg-white/60 backdrop-blur-md shadow-md border border-white/30 p-6 hover:shadow-lg transition">
+                        <h3 class="text-lg font-bold text-[#192A56] mb-1">Emily Watson</h3>
+                        <p class="text-sm text-[#F4978E] font-medium mb-2">Head of Product</p>
+                        <p class="text-[#192A56]/80 text-sm">Leads seamless user experience design in fashion tech.</p>
+                    </div>
+                    <div
+                        class="rounded-2xl bg-white/60 backdrop-blur-md shadow-md border border-white/30 p-6 hover:shadow-lg transition">
+                        <h3 class="text-lg font-bold text-[#192A56] mb-1">David Kim</h3>
+                        <p class="text-sm text-[#F4978E] font-medium mb-2">Lead Data Scientist</p>
+                        <p class="text-[#192A56]/80 text-sm">Expert in recommendation systems and predictive modeling.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+
+    <!-- DASHBOARD (more glass panels to illustrate a logged-in view) -->
+    <section id="dashboard" class="bg-blush/60 py-14">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h3 class="text-xl font-semibold">Dashboard preview</h3>
+                        <p class="muted text-sm">Quick actions and metrics at a glance.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <a class="btn-flat px-3 py-2">Export</a>
+                        <a class="btn-primary px-4 py-2">New Check</a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- panel 1 -->
+                    <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-sm muted">Return Reduction</div>
+                                <div class="text-2xl font-bold">60%</div>
+                            </div>
+                            <div class="icon-circle">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" style="color:var(--navy)">
+                                    <path d="M3 12h18M12 3v18" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- panel 2 -->
+                    <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-sm muted">Active Users</div>
+                                <div class="text-2xl font-bold">12.4k</div>
+                            </div>
+                            <div class="icon-circle">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" style="color:var(--navy)">
+                                    <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-4 0-8 2-8 4v2h16v-2c0-2-4-4-8-4z"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- panel 3 -->
+                    <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="text-sm muted">Avg. Accuracy</div>
+                                <div class="text-2xl font-bold">95%</div>
+                            </div>
+                            <div class="icon-circle">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.6" style="color:var(--navy)">
+                                    <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <footer class="bg-gradient-to-b from-gray-50 to-gray-100 border-t mt-12">
+    <!-- CTA footer (navy gradient, white text) -->
+    <footer class="bg-footer-grad text-white">
         <div class="container mx-auto px-4 py-12">
-            <div class="grid gap-8 md:grid-cols-4 text-sm text-gray-600">
-
-                <!-- Brand -->
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg shadow-md"></div>
-                        <span
-                            class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">SizeAI</span>
-                    </div>
-                    <p>AI-powered size recommendations for perfect fits every time.</p>
-                </div>
-
-                <!-- Quick Links -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
                 <div>
-                    <h3 class="font-semibold mb-4 text-gray-800">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/" class="hover:text-indigo-500 transition">Home</a></li>
-                        <li><a href="/how-it-works" class="hover:text-indigo-500 transition">How It Works</a></li>
-                        <li><a href="/technology" class="hover:text-indigo-500 transition">Technology</a></li>
-                        <li><a href="/demo" class="hover:text-indigo-500 transition">Demo</a></li>
-                    </ul>
+                    <div class="text-xl font-semibold">Ready to try SizeAI?</div>
+                    <div class="muted text-sm">Fast, accurate, and kinder to the planet (fewer returns).</div>
                 </div>
-
-                <!-- Company -->
-                <div>
-                    <h3 class="font-semibold mb-4 text-gray-800">Company</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/about" class="hover:text-indigo-500 transition">About Us</a></li>
-                        <li><a href="/contact" class="hover:text-indigo-500 transition">Contact</a></li>
-                        <li><a href="#" class="hover:text-indigo-500 transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-indigo-500 transition">Terms of Service</a></li>
-                    </ul>
+                <div class="text-center">
+                    <a href="#demo" class="btn-primary px-6 py-3 mr-3">Get Started</a>
+                    <a href="#contact" class="btn-flat px-4 py-3">Contact Sales</a>
                 </div>
-
-                <!-- Social -->
-                <div>
-                    <h3 class="font-semibold mb-4 text-gray-800">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="Facebook">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="Twitter">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Bottom -->
-            <div class="mt-8 pt-8 border-t text-center text-gray-500 text-sm">
-                © 2025 <span class="font-semibold text-gray-700">SizeAI</span>. All rights reserved.
+                <div class="text-right muted text-sm">© 2025 SizeAI • All rights reserved.</div>
             </div>
         </div>
     </footer>
 
+    <!-- subtle focus: keep JS minimal -->
+    <script>
+        // Simple mobile menu toggle (keeps example minimal)
+        document.addEventListener('click', (e) => {
+            // close menu when clicking outside if you implement one later
+        });
+    </script>
 </body>
 
 </html>
