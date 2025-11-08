@@ -46,17 +46,13 @@
 
     <!-- Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-
-    </style>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <header class="sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-3 flex items-center justify-between nav-shadow glass">
+    <header class="fixed top-0 left-0 w-full z-[9999]">
+        <nav class="mx-auto px-4 py-3 flex items-center justify-between nav-shadow glass relative">
             <a href="/" class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-lg"
                     style="background:linear-gradient(90deg,var(--coral),var(--peach)); box-shadow: 0 6px 18px rgba(25,42,86,0.08)">
@@ -64,32 +60,42 @@
                 <div>
                     <div class="text-lg font-semibold"
                         style="background:linear-gradient(90deg,var(--coral),var(--peach)); -webkit-background-clip:text; background-clip:text; color:transparent">
-                        SizeAI</div>
-                    <div class="text-xs muted">Fit that's personal</div>
+                        SizeAI
+                    </div>
+                    <div class="text-xs text-gray-500">Fit that's personal</div>
                 </div>
             </a>
 
             <div class="hidden md:flex items-center gap-4">
-                <a href="./index.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
-                <a href="./howItWorks.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It Works</a>
-                <a href="./contact.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
-
-                <!-- Buttons: primary (soft raised) + flat -->
+                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
+                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It Works</a>
+                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
                 <div class="flex items-center gap-3">
-                    <a href="/login" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
-                    <a href="/demo" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
+                    <a href="#" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
+                    <a href="#" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
                 </div>
             </div>
 
-            <!-- Mobile toggle -->
-            <button class="md:hidden p-2 btn-flat" aria-label="Open menu"
-                onclick="document.body.classList.toggle('menu-open')">
-                <!-- simple hamburger svg outline (navy) -->
-                <svg width="20" height="14" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    stroke="currentColor" stroke-width="1.6" style="color:var(--navy)">
+            <button id="menuToggle" class="md:hidden p-2 btn-flat fixed top-4 right-4 z-[10000]"
+                aria-label="Toggle menu">
+                <svg id="menuIcon" width="22" height="16" viewBox="0 0 24 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.8"
+                    style="color:var(--navy)">
                     <path d="M2 2h20M2 8h20M2 14h20" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
+                <svg id="closeIcon" width="22" height="16" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.8"
+                    style="color:var(--navy); display:none">
+                    <path d="M6 6L18 18M6 18L18 6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
             </button>
+
+            <div id="mobileMenu"
+                class="fixed top-20 inset-0 bg-blush z-[9998] flex flex-col items-center justify-center gap-6 text-center text-base font-medium opacity-0 pointer-events-none transform transition-all duration-300 ease-in-out">
+                <a href="./index.html" class="hover:text-[var(--coral)] transition">Home</a>
+                <a href="./howItWorks.html" class="hover:text-[var(--coral)] transition">How It Works</a>
+                <a href="./contact.html" class="hover:text-[var(--coral)] transition">Contact</a>
+            </div>
         </nav>
     </header>
 
@@ -111,7 +117,7 @@
                         </p>
 
                         <div class="mt-8 flex flex-col sm:flex-row items-center sm:items-start gap-3">
-                            <a href="#demo" class="btn-primary px-6 py-3 inline-flex items-center gap-3">
+                            <a href="./demo.html" class="btn-primary px-6 py-3 inline-flex items-center gap-3">
                                 <!-- icon (white) -->
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
                                     <path d="M5 12h14M12 5l7 7-7 7" stroke="rgba(255,255,255,0.96)" stroke-width="1.8"
@@ -120,10 +126,10 @@
                                 Try Demo
                             </a>
 
-                            <a href="#how" class="btn-flat px-5 py-3 inline-flex items-center gap-3">
+                            <a href="#how" class="btn-flat text-coral px-5 py-3 inline-flex items-center gap-3">
                                 <!-- play icon (navy) -->
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="1.6" style="color:var(--navy)">
+                                    stroke-width="1.6" style="color:var(--coral)">
                                     <path d="M5 3v18l15-9L5 3z" stroke-linejoin="round" stroke-linecap="round" />
                                 </svg>
                                 How it works
@@ -131,7 +137,7 @@
                         </div>
 
                         <!-- small stats -->
-                        <div class="mt-8 flex gap-6 text-sm">
+                        <!-- <div class="mt-8 flex gap-6 text-sm">
                             <div
                                 class="glass px-4 py-2 rounded-lg border border-peach/30 shadow-soft-1 inline-flex items-center gap-3">
                                 <div class="text-sm font-semibold">500+</div>
@@ -147,7 +153,7 @@
                                 <div class="text-sm font-semibold">95%</div>
                                 <div class="muted text-xs">Accuracy</div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
 
                     <!-- right: hero glass card preview (dashboard preview) -->
@@ -385,7 +391,7 @@
             </section>
 
             <!-- TEAM -->
-            <section class="mb-20 text-center">
+            <!-- <section class="mb-20 text-center">
                 <h2 class="text-3xl font-bold mb-4 text-[#192A56]">Meet Our Team</h2>
                 <p class="text-[#192A56]/70 mb-12 max-w-2xl mx-auto">
                     A diverse team of technologists, fashion experts, and data scientists united by a common goal.
@@ -420,12 +426,12 @@
                 </div>
             </section>
         </div>
+    </main> -->
+        </div>
+        </div>
     </main>
-
-
-
     <!-- DASHBOARD (more glass panels to illustrate a logged-in view) -->
-    <section id="dashboard" class="bg-blush/60 py-14">
+    <!-- <section id="dashboard" class="bg-blush/60 py-14">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="flex items-center justify-between mb-6">
@@ -439,9 +445,9 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- panel 1 -->
-                    <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> -->
+    <!-- panel 1 -->
+    <!-- <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
                         <div class="flex items-center justify-between">
                             <div>
                                 <div class="text-sm muted">Return Reduction</div>
@@ -454,10 +460,10 @@
                                 </svg>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <!-- panel 2 -->
-                    <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
+    <!-- panel 2 -->
+    <!-- <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
                         <div class="flex items-center justify-between">
                             <div>
                                 <div class="text-sm muted">Active Users</div>
@@ -471,10 +477,10 @@
                                 </svg>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <!-- panel 3 -->
-                    <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
+    <!-- panel 3 -->
+    <!-- <div class="glass p-6 rounded-xl border border-peach/20 shadow-soft-1">
                         <div class="flex items-center justify-between">
                             <div>
                                 <div class="text-sm muted">Avg. Accuracy</div>
@@ -491,32 +497,95 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA footer (navy gradient, white text) -->
-    <footer class="bg-footer-grad text-white">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+    <footer class="border-t mt-12">
+        <div class="container mx-auto px-4 py-10">
+            <div class="grid md:grid-cols-4 gap-6 text-[#192A56]/85">
                 <div>
-                    <div class="text-xl font-semibold">Ready to try SizeAI?</div>
-                    <div class="muted text-sm">Fast, accurate, and kinder to the planet (fewer returns).</div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg" style="background:linear-gradient(90deg,#F4978E,#FFDAB9)">
+                        </div>
+                        <div>
+                            <div class="font-semibold">SizeAI</div>
+                            <div class="text-sm text-[#192A56]/60">Perfect fit, every time</div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-sm text-[#192A56]/70">AI-powered size recommendations to reduce returns
+                        and
+                        increase confidence.</p>
                 </div>
-                <div class="text-center">
-                    <a href="#demo" class="btn-primary px-6 py-3 mr-3">Get Started</a>
-                    <a href="#contact" class="btn-flat px-4 py-3">Contact Sales</a>
+
+                <div>
+                    <h4 class="font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#technology" class="hover:text-[#F4978E]">Technology</a></li>
+                        <li><a href="#demo" class="hover:text-[#F4978E]">Demo</a></li>
+                        <li><a href="#how" class="hover:text-[#F4978E]">How It Works</a></li>
+                        <li><a href="./about.html" class="hover:text-[#F4978E]">About</a></li>
+                    </ul>
                 </div>
-                <div class="text-right muted text-sm">© 2025 SizeAI • All rights reserved.</div>
+
+                <div>
+                    <h4 class="font-semibold mb-3">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./contact.html" class="hover:text-[#F4978E]">Contact</a></li>
+                        <li><a href="#" class="hover:text-[#F4978E]">Privacy</a></li>
+                        <li><a href="#" class="hover:text-[#F4978E]">Terms</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-3">Follow Us</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-facebook-f" style="color:#192A56"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-twitter" style="color:#192A56"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-linkedin-in" style="color:#192A56"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-instagram" style="color:#192A56"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center text-sm text-[#192A56]/60">© 2025 <strong>SizeAI</strong>. All rights
+                reserved.
             </div>
         </div>
     </footer>
-
     <!-- subtle focus: keep JS minimal -->
     <script>
-        // Simple mobile menu toggle (keeps example minimal)
-        document.addEventListener('click', (e) => {
-            // close menu when clicking outside if you implement one later
+        const menuToggle = document.getElementById("menuToggle");
+        const menuIcon = document.getElementById("menuIcon");
+        const closeIcon = document.getElementById("closeIcon");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuToggle.addEventListener("click", (event) => {
+            event.stopPropagation(); // stop clicks from bubbling
+            mobileMenu.classList.toggle("open");
+
+            const isOpen = mobileMenu.classList.contains("open");
+            menuIcon.style.display = isOpen ? "none" : "block";
+            closeIcon.style.display = isOpen ? "block" : "none";
+        });
+
+        // Close menu when clicking outside links or menu
+        document.addEventListener("click", (event) => {
+            if (
+                mobileMenu.classList.contains("open") &&
+                !menuToggle.contains(event.target) &&
+                !mobileMenu.contains(event.target)
+            ) {
+                mobileMenu.classList.remove("open");
+                menuIcon.style.display = "block";
+                closeIcon.style.display = "none";
+            }
         });
     </script>
+
 </body>
 
 </html>

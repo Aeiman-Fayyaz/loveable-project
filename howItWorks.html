@@ -7,7 +7,7 @@
     <title>SizeAI | How It Works</title>
 
     <!-- Our Stylesheet -->
-     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/style.css">
 
     <!-- Inter font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -51,8 +51,8 @@
 <body class="bg-[#FFF0EB] text-[#192A56]">
 
     <!-- NAVBAR -->
-    <header class="sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-3 flex items-center justify-between nav-shadow glass">
+    <header class="fixed top-0 left-0 w-full z-[9999]">
+        <nav class="mx-auto px-4 py-3 flex items-center justify-between nav-shadow glass relative">
             <a href="/" class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-lg"
                     style="background:linear-gradient(90deg,var(--coral),var(--peach)); box-shadow: 0 6px 18px rgba(25,42,86,0.08)">
@@ -60,33 +60,42 @@
                 <div>
                     <div class="text-lg font-semibold"
                         style="background:linear-gradient(90deg,var(--coral),var(--peach)); -webkit-background-clip:text; background-clip:text; color:transparent">
-                        SizeAI</div>
-                    <div class="text-xs muted">Fit that's personal</div>
+                        SizeAI
+                    </div>
+                    <div class="text-xs text-gray-500">Fit that's personal</div>
                 </div>
             </a>
 
             <div class="hidden md:flex items-center gap-4">
-                <a href="./index.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
-                <a href="./howItWorks.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It
-                    Works</a>
-                <a href="./contact.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
-
-                <!-- Buttons: primary (soft raised) + flat -->
+                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
+                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It Works</a>
+                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
                 <div class="flex items-center gap-3">
-                    <a href="/login" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
-                    <a href="/demo" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
+                    <a href="#" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
+                    <a href="#" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
                 </div>
             </div>
 
-            <!-- Mobile toggle -->
-            <button class="md:hidden p-2 btn-flat" aria-label="Open menu"
-                onclick="document.body.classList.toggle('menu-open')">
-                <!-- simple hamburger svg outline (navy) -->
-                <svg width="20" height="14" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg"
-                    stroke="currentColor" stroke-width="1.6" style="color:var(--navy)">
+            <button id="menuToggle" class="md:hidden p-2 btn-flat fixed top-4 right-4 z-[10000]"
+                aria-label="Toggle menu">
+                <svg id="menuIcon" width="22" height="16" viewBox="0 0 24 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.8"
+                    style="color:var(--navy)">
                     <path d="M2 2h20M2 8h20M2 14h20" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
+                <svg id="closeIcon" width="22" height="16" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.8"
+                    style="color:var(--navy); display:none">
+                    <path d="M6 6L18 18M6 18L18 6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
             </button>
+
+            <div id="mobileMenu"
+                class="fixed top-20 inset-0 bg-blush z-[9998] flex flex-col items-center justify-center gap-6 text-center text-base font-medium opacity-0 pointer-events-none transform transition-all duration-300 ease-in-out">
+                <a href="./index.html" class="hover:text-[var(--coral)] transition">Home</a>
+                <a href="./howItWorks.html" class="hover:text-[var(--coral)] transition">How It Works</a>
+                <a href="./contact.html" class="hover:text-[var(--coral)] transition">Contact</a>
+            </div>
         </nav>
     </header>
     <main id="top" class="pt-8">
@@ -162,64 +171,6 @@
             </div>
         </section>
 
-        <!-- TECHNOLOGY SECTION -->
-        <section id="technology" class="container mx-auto px-4 py-12 md:py-20">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold">Our AI Prediction Flow</h2>
-                    <p class="mt-3 text-[#192A56]/75 max-w-2xl mx-auto">How user inputs turn into accurate
-                        recommendations.</p>
-                </div>
-
-                <div
-                    class="rounded-2xl bg-white/60 backdrop-blur-md border border-white/30 p-6 shadow-sm overflow-hidden">
-                    <div class="text-center mb-6">
-                        <!-- placeholder image -->
-                        <img src="/assets/ai-flow-29RrjjTR.jpg" alt="AI flow"
-                            class="w-full max-w-3xl mx-auto rounded-lg shadow-md" />
-                    </div>
-
-                    <div class="mt-8 grid md:grid-cols-3 gap-6 text-center">
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg text-[#192A56]">Input Layer</h3>
-                            <p class="text-sm text-[#192A56]/75 mt-2">User measurements, preferences, brand selection.
-                            </p>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg text-[#192A56]">Processing Layer</h3>
-                            <p class="text-sm text-[#192A56]/75 mt-2">Neural networks analyze patterns & brand fit
-                                correlations.</p>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-semibold text-lg text-[#192A56]">Output Layer</h3>
-                            <p class="text-sm text-[#192A56]/75 mt-2">Size recommendation + confidence score.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats -->
-                <div class="mt-10 grid md:grid-cols-3 gap-6 text-center">
-                    <div class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
-                        <div class="text-4xl font-bold"
-                            style="background: linear-gradient(90deg,#F4978E,#FFDAB9); color:transparent">
-                            95%</div>
-                        <p class="mt-2 text-sm text-[#192A56]/75">Accuracy Rate</p>
-                    </div>
-                    <div class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
-                        <div class="text-4xl font-bold"
-                            style="background: linear-gradient(90deg,#F4978E,#FFDAB9); color:transparent">
-                            500+</div>
-                        <p class="mt-2 text-sm text-[#192A56]/75">Brands Supported</p>
-                    </div>
-                    <div class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
-                        <div class="text-4xl font-bold"
-                            style="background: linear-gradient(90deg,#F4978E,#FFDAB9); color:transparent">
-                            1M+</div>
-                        <p class="mt-2 text-sm text-[#192A56]/75">Recommendations Made</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <!-- DEMO SECTION -->
         <section id="demo" class="container mx-auto px-4 py-12 md:py-20">
@@ -410,11 +361,32 @@
 
     <!-- Minimal JS: mobile menu, demo mock logic, scroll handling -->
     <script>
-        // Mobile menu toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileToggle?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        const menuToggle = document.getElementById("menuToggle");
+        const menuIcon = document.getElementById("menuIcon");
+        const closeIcon = document.getElementById("closeIcon");
+        const mobileMenu = document.getElementById("mobileMenu");
 
+        menuToggle.addEventListener("click", (event) => {
+            event.stopPropagation(); // stop clicks from bubbling
+            mobileMenu.classList.toggle("open");
+
+            const isOpen = mobileMenu.classList.contains("open");
+            menuIcon.style.display = isOpen ? "none" : "block";
+            closeIcon.style.display = isOpen ? "block" : "none";
+        });
+
+        // Close menu when clicking outside links or menu
+        document.addEventListener("click", (event) => {
+            if (
+                mobileMenu.classList.contains("open") &&
+                !menuToggle.contains(event.target) &&
+                !mobileMenu.contains(event.target)
+            ) {
+                mobileMenu.classList.remove("open");
+                menuIcon.style.display = "block";
+                closeIcon.style.display = "none";
+            }
+        });
     </script>
 </body>
 

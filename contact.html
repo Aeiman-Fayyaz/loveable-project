@@ -4,72 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>SizeAI - Contact</title>
+
+    <!-- Our Stylesheet -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <!-- Font Aweosome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind config (your exact colors) -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#4f46e5',
-                        secondary: '#06b6d4',
+                        navy: '#192A56',
+                        coral: '#F4978E',
+                        peach: '#FFDAB9',
+                        blush: '#FFF0EB',
                     },
-                },
-            },
+                    boxShadow: {
+                        'soft-1': '0 6px 18px rgba(25,42,86,0.10)',
+                        'soft-2': '0 12px 30px rgba(25,42,86,0.10)',
+                        'glow-coral': '0 10px 30px rgba(244,149,142,0.18)',
+                        'inset-soft': 'inset 6px 6px 12px rgba(0,0,0,0.03), inset -6px -6px 12px rgba(255,255,255,0.7)'
+                    },
+                    backgroundImage: {
+                        'navy-grad': 'linear-gradient(180deg,#192A56 0%, #2a386f 100%)',
+                        'footer-grad': 'linear-gradient(180deg,#152041 0%, #192A56 100%)',
+                        'hero-overlay': 'linear-gradient(180deg, rgba(25,42,86,0.18), rgba(25,42,86,0.10))'
+                    }
+                }
+            }
         }
     </script>
+
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b shadow-sm">
-        <div class="container mx-auto flex items-center justify-between h-16 px-4">
-            <!-- Logo -->
-            <a href="/" class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-lg shadow-md"></div>
-                <span
-                    class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-blue-500 bg-clip-text text-transparent">
-                    SizeAI
-                </span>
+    <header class="fixed top-0 left-0 w-full z-[9999]">
+        <nav class="mx-auto px-4 py-3 flex items-center justify-between nav-shadow glass relative">
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg"
+                    style="background:linear-gradient(90deg,var(--coral),var(--peach)); box-shadow: 0 6px 18px rgba(25,42,86,0.08)">
+                </div>
+                <div>
+                    <div class="text-lg font-semibold"
+                        style="background:linear-gradient(90deg,var(--coral),var(--peach)); -webkit-background-clip:text; background-clip:text; color:transparent">
+                        SizeAI
+                    </div>
+                    <div class="text-xs text-gray-500">Fit that's personal</div>
+                </div>
             </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-1">
-                <a href="./index.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Home</a>
-                <a href="./howItWorks.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">How It
-                    Works</a>
-                <a href="./technology.html"
-                    class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Technology</a>
-                <a href="./demo.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Demo</a>
-                <a href="./about.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">About</a>
-                <a href="./contact.html" class="px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100">Contact</a>
-                <a href="./login.html"
-                    class="ml-4 px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700 shadow transition">
-                    Login
-                </a>
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
+                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It Works</a>
+                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
+                <div class="flex items-center gap-3">
+                    <a href="#" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
+                    <a href="#" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
+                </div>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden p-2" aria-label="Toggle menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="4" x2="20" y1="6" y2="6" />
-                    <line x1="4" x2="20" y1="12" y2="12" />
-                    <line x1="4" x2="20" y1="18" y2="18" />
+            <button id="menuToggle" class="md:hidden p-2 btn-flat fixed top-4 right-4 z-[10000]"
+                aria-label="Toggle menu">
+                <svg id="menuIcon" width="22" height="16" viewBox="0 0 24 16" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.8"
+                    style="color:var(--navy)">
+                    <path d="M2 2h20M2 8h20M2 14h20" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <svg id="closeIcon" width="22" height="16" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="1.8"
+                    style="color:var(--navy); display:none">
+                    <path d="M6 6L18 18M6 18L18 6" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </button>
-        </div>
-    </nav>
+
+            <div id="mobileMenu"
+                class="fixed top-20 inset-0 bg-blush z-[9998] flex flex-col items-center justify-center gap-6 text-center text-base font-medium opacity-0 pointer-events-none transform transition-all duration-300 ease-in-out">
+                <a href="#" class="hover:text-[var(--coral)] transition">Home</a>
+                <a href="#" class="hover:text-[var(--coral)] transition">How It Works</a>
+                <a href="#" class="hover:text-[var(--coral)] transition">Contact</a>
+            </div>
+        </nav>
+    </header>
 
     <main class="flex-grow py-16">
-        <section class="container mx-auto px-4">
+        <section class="container mx-auto px-4 py-6">
             <div class="text-center mb-16">
                 <h1 class="text-4xl md:text-5xl font-bold mb-4">
-                    Get in <span class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">Touch</span>
+                    Get in <span
+                        class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-coral">Touch</span>
                 </h1>
                 <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
                     Have questions? We'd love to hear from you.
@@ -188,78 +223,90 @@
         </section>
     </main>
 
-    <footer class="bg-gradient-to-b from-gray-50 to-gray-100 border-t mt-12">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid gap-8 md:grid-cols-4 text-sm text-gray-600">
-
-                <!-- Brand -->
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-2">
-                        <div class="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg shadow-md"></div>
-                        <span
-                            class="text-xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">SizeAI</span>
+    <footer class="bg-gradient-to-b from-[#FFF0EB] to-[#FFDAB9] border-t mt-12">
+        <div class="container mx-auto px-4 py-10">
+            <div class="grid md:grid-cols-4 gap-6 text-[#192A56]/85">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg" style="background:linear-gradient(90deg,#F4978E,#FFDAB9)">
+                        </div>
+                        <div>
+                            <div class="font-semibold">SizeAI</div>
+                            <div class="text-sm text-[#192A56]/60">Perfect fit, every time</div>
+                        </div>
                     </div>
-                    <p>AI-powered size recommendations for perfect fits every time.</p>
+                    <p class="mt-4 text-sm text-[#192A56]/70">AI-powered size recommendations to reduce returns and
+                        increase confidence.</p>
                 </div>
 
-                <!-- Quick Links -->
                 <div>
-                    <h3 class="font-semibold mb-4 text-gray-800">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/" class="hover:text-indigo-500 transition">Home</a></li>
-                        <li><a href="/how-it-works" class="hover:text-indigo-500 transition">How It Works</a></li>
-                        <li><a href="/technology" class="hover:text-indigo-500 transition">Technology</a></li>
-                        <li><a href="/demo" class="hover:text-indigo-500 transition">Demo</a></li>
+                    <h4 class="font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#technology" class="hover:text-[#F4978E]">Technology</a></li>
+                        <li><a href="#demo" class="hover:text-[#F4978E]">Demo</a></li>
+                        <li><a href="#how" class="hover:text-[#F4978E]">How It Works</a></li>
+                        <li><a href="./about.html" class="hover:text-[#F4978E]">About</a></li>
                     </ul>
                 </div>
 
-                <!-- Company -->
                 <div>
-                    <h3 class="font-semibold mb-4 text-gray-800">Company</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/about" class="hover:text-indigo-500 transition">About Us</a></li>
-                        <li><a href="/contact" class="hover:text-indigo-500 transition">Contact</a></li>
-                        <li><a href="#" class="hover:text-indigo-500 transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-indigo-500 transition">Terms of Service</a></li>
+                    <h4 class="font-semibold mb-3">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./contact.html" class="hover:text-[#F4978E]">Contact</a></li>
+                        <li><a href="#" class="hover:text-[#F4978E]">Privacy</a></li>
+                        <li><a href="#" class="hover:text-[#F4978E]">Terms</a></li>
                     </ul>
                 </div>
 
-                <!-- Social -->
                 <div>
-                    <h3 class="font-semibold mb-4 text-gray-800">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-lg hover:bg-indigo-500 hover:text-white transition"
-                            aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                    <h4 class="font-semibold mb-3">Follow Us</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-facebook-f" style="color:#192A56"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-twitter" style="color:#192A56"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-linkedin-in" style="color:#192A56"></i></a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                                class="fab fa-instagram" style="color:#192A56"></i></a>
                     </div>
                 </div>
-
             </div>
 
-            <!-- Bottom -->
-            <div class="mt-8 pt-8 border-t text-center text-gray-500 text-sm">
-                © 2025 <span class="font-semibold text-gray-700">SizeAI</span>. All rights reserved.
+            <div class="mt-8 text-center text-sm text-[#192A56]/60">© 2025 <strong>SizeAI</strong>. All rights reserved.
             </div>
         </div>
     </footer>
 
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const menuIcon = document.getElementById("menuIcon");
+        const closeIcon = document.getElementById("closeIcon");
+        const mobileMenu = document.getElementById("mobileMenu");
+
+        menuToggle.addEventListener("click", (event) => {
+            event.stopPropagation(); // stop clicks from bubbling
+            mobileMenu.classList.toggle("open");
+
+            const isOpen = mobileMenu.classList.contains("open");
+            menuIcon.style.display = isOpen ? "none" : "block";
+            closeIcon.style.display = isOpen ? "block" : "none";
+        });
+
+        // Close menu when clicking outside links or menu
+        document.addEventListener("click", (event) => {
+            if (
+                mobileMenu.classList.contains("open") &&
+                !menuToggle.contains(event.target) &&
+                !mobileMenu.contains(event.target)
+            ) {
+                mobileMenu.classList.remove("open");
+                menuIcon.style.display = "block";
+                closeIcon.style.display = "none";
+            }
+        });
+    </script>
 </body>
 
 </html>

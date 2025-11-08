@@ -79,6 +79,18 @@ body {
 .nav-shadow {
   box-shadow: 0 6px 18px rgba(25, 42, 86, 0.06);
 }
+#mobileMenu {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#mobileMenu.open {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
 
 /* responsive hero adjustments so text never blends with bg */
 @media (min-width: 1024px) {
