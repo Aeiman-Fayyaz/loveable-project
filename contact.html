@@ -50,7 +50,7 @@
 </head>
 
 <body>
-
+    <!-- HEADER/NAVBAR -->
     <header class="fixed top-0 left-0 w-full z-[9999]">
         <nav class="mx-auto px-4 py-3 flex items-center justify-between nav-shadow glass relative">
             <a href="/" class="flex items-center gap-3">
@@ -67,12 +67,13 @@
             </a>
 
             <div class="hidden md:flex items-center gap-4">
-                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
-                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It Works</a>
-                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
+                <a href="./index.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
+                <a href="./howItWorks.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It
+                    Works</a>
+                <a href="./contact.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
                 <div class="flex items-center gap-3">
-                    <a href="#" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
-                    <a href="#" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
+                    <a href="./login.html" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
+                    <a href="./demo.html" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
                 </div>
             </div>
 
@@ -92,13 +93,14 @@
 
             <div id="mobileMenu"
                 class="fixed top-20 inset-0 bg-blush z-[9998] flex flex-col items-center justify-center gap-6 text-center text-base font-medium opacity-0 pointer-events-none transform transition-all duration-300 ease-in-out">
-                <a href="#" class="hover:text-[var(--coral)] transition">Home</a>
-                <a href="#" class="hover:text-[var(--coral)] transition">How It Works</a>
-                <a href="#" class="hover:text-[var(--coral)] transition">Contact</a>
+                <a href="./index.html" class="hover:text-[var(--coral)] transition">Home</a>
+                <a href="./howItWorks.html" class="hover:text-[var(--coral)] transition">How It Works</a>
+                <a href="./contact.html" class="hover:text-[var(--coral)] transition">Contact</a>
             </div>
         </nav>
     </header>
 
+    <!-- HERO SECTION -->
     <main class="flex-grow py-16">
         <section class="container mx-auto px-4 py-6">
             <div class="text-center mb-16">
@@ -142,7 +144,8 @@
                         </div>
 
                         <button type="submit"
-                            class="w-full h-11 rounded-md bg-gradient-hero text-primary-foreground font-semibold shadow-glow hover:opacity-90 transition-all duration-300 hover:scale-105">
+                            class="w-full h-11 rounded-md bg-gradient-hero text-primary-foreground font-semibold shadow-glow hover:opacity-90 transition-all duration-300 hover:scale-105"
+                            style="background: linear-gradient(90deg,#F4978E,#FFDAB9)">
                             Send Message
                         </button>
                     </form>
@@ -151,78 +154,89 @@
                 <!-- Sidebar -->
                 <div class="space-y-6">
                     <div class="bg-gradient-subtle border rounded-lg shadow-sm p-6">
-                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
-                        <div class="space-y-5 text-sm">
-                            <a href="mailto:hello@sizeai.com" class="flex items-center gap-3 group">
-                                <div
-                                    class="w-10 h-10 bg-gradient-hero rounded-lg flex justify-center items-center shadow-glow group-hover:scale-110 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-foreground"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <rect width="20" height="16" x="2" y="4" rx="2" />
-                                        <path d="m22 7-10 6L2 7" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Email</p>
-                                    <p class="text-muted-foreground">hello@sizeai.com</p>
-                                </div>
-                            </a>
-
-                            <a href="tel:+15551234567" class="flex items-center gap-3 group">
-                                <div
-                                    class="w-10 h-10 bg-gradient-hero rounded-lg flex justify-center items-center shadow-glow group-hover:scale-110 transition">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-foreground"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path
-                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 20 20 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.22 5.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Phone</p>
-                                    <p class="text-muted-foreground">+1 (555) 123-4567</p>
-                                </div>
-                            </a>
-
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-10 h-10 bg-gradient-hero rounded-lg flex justify-center items-center shadow-glow">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-foreground"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path
-                                            d="M20 10c0 5-5.5 10.2-7.4 11.8a1 1 0 0 1-1.2 0C9.5 20.2 4 15 4 10a8 8 0 0 1 16 0" />
-                                        <circle cx="12" cy="10" r="3" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <p class="font-semibold">Office</p>
-                                    <p class="text-muted-foreground">123 AI Street, San Francisco, CA</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="border rounded-lg bg-card p-6 shadow-sm">
-                        <h3 class="text-xl font-bold mb-4">Business Hours</h3>
-                        <div class="space-y-2 text-sm">
-                            <div class="flex justify-between"><span>Mon–Fri</span><span>9:00 AM – 6:00 PM</span></div>
-                            <div class="flex justify-between"><span>Saturday</span><span>10:00 AM – 4:00 PM</span></div>
-                            <div class="flex justify-between"><span>Sunday</span><span>Closed</span></div>
-                        </div>
-                    </div>
-
-                    <div class="border-2 border-primary/20 rounded-lg bg-card p-6 shadow-sm">
-                        <h3 class="text-xl font-bold mb-2">Need Immediate Help?</h3>
-                        <p class="text-sm text-muted-foreground mb-4">Check our FAQ or demo to see how SizeAI works.</p>
-                        <button
-                            class="w-full border rounded-md py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground transition">
-                            Visit FAQ
-                        </button>
+                        <img src="./assets/contact.svg" alt="" class="h-[507px]">
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
+    <!-- CONTACT DETAIL -->
+    <section class="relative py-20 px-6 md:px-10 bg-[#FFF6F4]">
+    <!-- Main container -->
+    <div class="relative z-10 max-w-5xl mx-auto space-y-10">   
+        <!-- CONTACT INFO -->
+        <div
+            class="rounded-2xl bg-white/60 backdrop-blur-md border border-white/30 shadow-[0_8px_25px_rgba(25,42,86,0.12)] p-8 hover:shadow-[0_10px_40px_rgba(25,42,86,0.18)] transition">
+            <h3 class="text-2xl font-bold mb-8 text-[#192A56]">Contact Information</h3>
 
+            <div class="flex flex-col gap-6 text-sm">
+                <!-- Email -->
+                <a href="mailto:hello@sizeai.com"
+                    class="flex items-center gap-4 group hover:translate-x-1 transition">
+                    <div
+                        class="w-12 h-12 rounded-xl flex justify-center items-center bg-gradient-to-r from-[#F4978E] to-[#FFDAB9] text-white shadow-md group-hover:scale-110 transition">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-[#192A56]">Email</p>
+                        <p class="text-[#192A56]/70">hello@sizeai.com</p>
+                    </div>
+                </a>
+
+                <!-- Phone -->
+                <a href="tel:+15551234567"
+                    class="flex items-center gap-4 group hover:translate-x-1 transition">
+                    <div
+                        class="w-12 h-12 rounded-xl flex justify-center items-center bg-gradient-to-r from-[#F4978E] to-[#FFDAB9] text-white shadow-md group-hover:scale-110 transition">
+                        <i class="fa-solid fa-phone text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-[#192A56]">Phone</p>
+                        <p class="text-[#192A56]/70">+1 (555) 123-4567</p>
+                    </div>
+                </a>
+
+                <!-- Office -->
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-xl flex justify-center items-center bg-gradient-to-r from-[#F4978E] to-[#FFDAB9] text-white shadow-md">
+                        <i class="fa-solid fa-location-dot text-lg"></i>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-[#192A56]">Office</p>
+                        <p class="text-[#192A56]/70">123 AI Street, San Francisco, CA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BUSINESS HOURS -->
+        <div
+            class="rounded-2xl bg-white/60 backdrop-blur-md border border-white/30 shadow-[0_8px_25px_rgba(25,42,86,0.12)] p-8">
+            <h3 class="text-2xl font-bold mb-4 text-[#192A56]">Business Hours</h3>
+            <div class="space-y-2 text-sm text-[#192A56]/80">
+                <div class="flex justify-between"><span>Mon–Fri</span><span>9:00 AM – 6:00 PM</span></div>
+                <div class="flex justify-between"><span>Saturday</span><span>10:00 AM – 4:00 PM</span></div>
+                <div class="flex justify-between"><span>Sunday</span><span>Closed</span></div>
+            </div>
+        </div>
+
+        <!-- HELP / FAQ -->
+        <div
+            class="rounded-2xl bg-gradient-to-r from-[#FFDAB9]/70 to-[#F4978E]/70 text-[#192A56] border border-white/30 shadow-[0_8px_25px_rgba(25,42,86,0.12)] p-8 text-center">
+            <h3 class="text-2xl font-bold mb-3">Need Immediate Help?</h3>
+            <p class="text-sm text-[#192A56]/80 mb-5">Check our FAQ or demo to see how SizeAI works.</p>
+            <button
+                class="px-6 py-2 rounded-lg bg-white/70 hover:bg-white/90 font-semibold text-[#192A56] border border-white/30 backdrop-blur-sm transition">
+                Visit FAQ
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- FOOTER -->
     <footer class="bg-gradient-to-b from-[#FFF0EB] to-[#FFDAB9] border-t mt-12">
         <div class="container mx-auto px-4 py-10">
             <div class="grid md:grid-cols-4 gap-6 text-[#192A56]/85">
@@ -242,17 +256,15 @@
                 <div>
                     <h4 class="font-semibold mb-3">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#technology" class="hover:text-[#F4978E]">Technology</a></li>
-                        <li><a href="#demo" class="hover:text-[#F4978E]">Demo</a></li>
-                        <li><a href="#how" class="hover:text-[#F4978E]">How It Works</a></li>
-                        <li><a href="./about.html" class="hover:text-[#F4978E]">About</a></li>
+                        <li><a href="./index.html" class="hover:text-[#F4978E]">Home</a></li>
+                        <li><a href="./howItWorks.html" class="hover:text-[#F4978E]">How It Works</a></li>
+                        <li><a href="./contact.html" class="hover:text-[#F4978E]">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="font-semibold mb-3">Company</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="./contact.html" class="hover:text-[#F4978E]">Contact</a></li>
                         <li><a href="#" class="hover:text-[#F4978E]">Privacy</a></li>
                         <li><a href="#" class="hover:text-[#F4978E]">Terms</a></li>
                     </ul>
@@ -261,13 +273,17 @@
                 <div>
                     <h4 class="font-semibold mb-3">Follow Us</h4>
                     <div class="flex gap-3">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border hover:bg-peach"><i
                                 class="fab fa-facebook-f" style="color:#192A56"></i></a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border hover:bg-peach"><i
                                 class="fab fa-twitter" style="color:#192A56"></i></a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border hover:bg-peach"><i
                                 class="fab fa-linkedin-in" style="color:#192A56"></i></a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border hover:bg-peach"><i
                                 class="fab fa-instagram" style="color:#192A56"></i></a>
                     </div>
                 </div>

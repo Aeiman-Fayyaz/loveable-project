@@ -46,6 +46,10 @@
             }
         }
     </script>
+
+    <!-- Animation AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body class="bg-[#FFF0EB] text-[#192A56]">
@@ -67,12 +71,13 @@
             </a>
 
             <div class="hidden md:flex items-center gap-4">
-                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
-                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It Works</a>
-                <a href="#" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
+                <a href="./index.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
+                <a href="./howItWorks.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It
+                    Works</a>
+                <a href="./contact.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
                 <div class="flex items-center gap-3">
-                    <a href="#" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
-                    <a href="#" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
+                    <a href="./login.html" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
+                    <a href="./demo.html" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
                 </div>
             </div>
 
@@ -98,35 +103,40 @@
             </div>
         </nav>
     </header>
-    <main id="top" class="pt-8">
 
+    <!-- Header Section -->
+    <main id="top" class="pt-8">
+        <!-- !-- 🌌 Background GIF -->
+        <div class="absolute inset-0 bg-[url('./assets/tech-banner.gif')] bg-cover bg-center opacity-50"></div>
         <!-- HERO / Intro -->
         <section class="container mx-auto px-4 py-12 md:py-20">
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div>
-                    <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-                        The <span
-                            style="background: linear-gradient(90deg,#192A56,#192A56); -webkit-background-clip:text; background-clip:text; color:transparent">Technology</span>
-                        Behind SizeAI
-                    </h1>
-                    <p class="mt-4 text-lg text-[#192A56]/80 max-w-2xl">
-                        Advanced machine learning and data science deliver fast, brand-specific size recommendations
-                        that reduce returns and increase customer confidence.
-                    </p>
+                    <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+                            The <span
+                                style="background: linear-gradient(90deg,#192A56,#192A56); -webkit-background-clip:text; background-clip:text; color:transparent">Technology</span>
+                            Behind SizeAI
+                        </h1>
+                        <p class="mt-4 text-lg text-[#192A56]/80 max-w-2xl">
+                            Advanced machine learning and data science deliver fast, brand-specific size recommendations
+                            that reduce returns and increase customer confidence.
+                        </p>
 
-                    <div class="mt-6 flex flex-wrap gap-3">
-                        <a href="#demo"
-                            class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-white font-semibold"
-                            style="background: linear-gradient(90deg,#F4978E,#FFDAB9); box-shadow:0 10px 30px rgba(244,149,142,0.16)">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M5 12h14M12 5l7 7-7 7" stroke="white" stroke-width="1.6" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                            </svg>
-                            Try Demo
-                        </a>
-                        <a href="#how"
-                            class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-[#192A56] bg-white/60 backdrop-blur-sm border border-white/30">How
-                            it works</a>
+                        <div class="mt-6 flex flex-wrap gap-3">
+                            <a href="./demo.html"
+                                class="inline-flex items-center gap-2 px-4 py-2 rounded-md font-semibold"
+                                style="background: linear-gradient(90deg,#F4978E,#FFDAB9); box-shadow:0 10px 30px rgba(244,149,142,0.16)">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke="navy" stroke-width="1.6"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                Try Demo
+                            </a>
+                            <a href="./howItWorks.html"
+                                class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-[#192A56] bg-white/60 backdrop-blur-sm border border-white/30">How
+                                it works</a>
+                        </div>
                     </div>
                 </div>
 
@@ -161,7 +171,7 @@
                         </div>
 
                         <div class="mt-4 flex gap-2">
-                            <a class="px-3 py-2 rounded-md text-white text-sm"
+                            <a class="px-3 py-2 rounded-md text-navy text-sm"
                                 style="background: linear-gradient(90deg,#F4978E,#FFDAB9)">Get Recommendation</a>
                             <a
                                 class="px-3 py-2 rounded-md text-[#192A56] bg-white/60 border border-white/30 text-sm">History</a>
@@ -170,94 +180,93 @@
                 </div>
             </div>
         </section>
+    </main>
+    <!-- DEMO SECTION -->
+    <section id="demo" class="container mx-auto px-4 py-12 md:py-20">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold pt-12">Try Our AI Demo</h2>
+                <p class="mt-3 text-[#192A56]/75 max-w-2xl mx-auto">Enter measurements and get instant, brand-aware
+                    size suggestions.</p>
+            </div>
 
+            <div class="grid lg:grid-cols-2 gap-8 items-start">
+                <!-- form -->
+                <div class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
+                    <h3 class="text-2xl font-semibold mb-4">Your Information</h3>
+                    <form id="demoForm" class="space-y-4">
+                        <div>
+                            <label for="height" class="text-sm font-medium">Height (cm)</label>
+                            <input id="height" name="height" type="number" placeholder="170"
+                                class="mt-2 w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDAB9]/50" />
+                        </div>
 
-        <!-- DEMO SECTION -->
-        <section id="demo" class="container mx-auto px-4 py-12 md:py-20">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold">Try Our AI Demo</h2>
-                    <p class="mt-3 text-[#192A56]/75 max-w-2xl mx-auto">Enter measurements and get instant, brand-aware
-                        size suggestions.</p>
+                        <div>
+                            <label for="weight" class="text-sm font-medium">Weight (kg)</label>
+                            <input id="weight" name="weight" type="number" placeholder="70"
+                                class="mt-2 w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDAB9]/50" />
+                        </div>
+
+                        <div>
+                            <label for="brand" class="text-sm font-medium">Brand</label>
+                            <select id="brand" name="brand" class="mt-2 w-full rounded-lg border px-3 py-2 text-sm">
+                                <option value="">Select a brand</option>
+                                <option>Nike</option>
+                                <option>Adidas</option>
+                                <option>Levi's</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="fit" class="text-sm font-medium">Fit Preference</label>
+                            <select id="fit" name="fit" class="mt-2 w-full rounded-lg border px-3 py-2 text-sm">
+                                <option value="">Select fit preference</option>
+                                <option>Slim</option>
+                                <option>Regular</option>
+                                <option>Relaxed</option>
+                            </select>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" class="w-full rounded-lg py-3 font-semibold text-white"
+                                style="background: linear-gradient(90deg,#F4978E,#FFDAB9); box-shadow: 0 10px 30px rgba(244,149,142,0.14)">Get
+                                Recommendation</button>
+                        </div>
+                    </form>
                 </div>
 
-                <div class="grid lg:grid-cols-2 gap-8 items-start">
-                    <!-- form -->
-                    <div class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
-                        <h3 class="text-2xl font-semibold mb-4">Your Information</h3>
-                        <form id="demoForm" class="space-y-4">
-                            <div>
-                                <label for="height" class="text-sm font-medium">Height (cm)</label>
-                                <input id="height" name="height" type="number" placeholder="170"
-                                    class="mt-2 w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDAB9]/50" />
-                            </div>
+                <!-- result -->
+                <div id="recommendationBox"
+                    class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-[#192A56]/40 mb-4" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 8v4l2 2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
 
-                            <div>
-                                <label for="weight" class="text-sm font-medium">Weight (kg)</label>
-                                <input id="weight" name="weight" type="number" placeholder="70"
-                                    class="mt-2 w-full rounded-lg border px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFDAB9]/50" />
-                            </div>
+                    <p class="text-[#192A56]/75 mb-4">Fill the form and click <strong>Get Recommendation</strong> to
+                        see your suggested size.</p>
 
-                            <div>
-                                <label for="brand" class="text-sm font-medium">Brand</label>
-                                <select id="brand" name="brand" class="mt-2 w-full rounded-lg border px-3 py-2 text-sm">
-                                    <option value="">Select a brand</option>
-                                    <option>Nike</option>
-                                    <option>Adidas</option>
-                                    <option>Levi's</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label for="fit" class="text-sm font-medium">Fit Preference</label>
-                                <select id="fit" name="fit" class="mt-2 w-full rounded-lg border px-3 py-2 text-sm">
-                                    <option value="">Select fit preference</option>
-                                    <option>Slim</option>
-                                    <option>Regular</option>
-                                    <option>Relaxed</option>
-                                </select>
-                            </div>
-
-                            <div class="pt-2">
-                                <button type="submit" class="w-full rounded-lg py-3 font-semibold text-white"
-                                    style="background: linear-gradient(90deg,#F4978E,#FFDAB9); box-shadow: 0 10px 30px rgba(244,149,142,0.14)">Get
-                                    Recommendation</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- result -->
-                    <div id="recommendationBox"
-                        class="rounded-2xl p-8 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm text-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-[#192A56]/40 mb-4"
-                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M12 8v4l2 2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
-                        <p class="text-[#192A56]/75 mb-4">Fill the form and click <strong>Get Recommendation</strong> to
-                            see your suggested size.</p>
-
-                        <div id="resultCard" class="hidden rounded-xl p-4 bg-white/70 border border-white/20">
-                            <div class="text-sm text-[#192A56]/70">Recommended Size</div>
-                            <div class="text-2xl font-bold">M</div>
-                            <div class="mt-2 text-sm text-[#192A56]/75">Brand: Aster • Confidence: 92%</div>
-                            <div class="mt-4 flex justify-center gap-3">
-                                <button id="saveBtn"
-                                    class="px-4 py-2 rounded-md text-sm bg-white/80 border">Save</button>
-                                <button id="recheckBtn" class="px-4 py-2 rounded-md text-sm"
-                                    style="background: linear-gradient(90deg,#F4978E,#FFDAB9); color:white">Re-check</button>
-                            </div>
+                    <div id="resultCard" class="hidden rounded-xl p-4 bg-white/70 border border-white/20">
+                        <div class="text-sm text-[#192A56]/70">Recommended Size</div>
+                        <div class="text-2xl font-bold">M</div>
+                        <div class="mt-2 text-sm text-[#192A56]/75">Brand: Aster • Confidence: 92%</div>
+                        <div class="mt-4 flex justify-center gap-3">
+                            <button id="saveBtn" class="px-4 py-2 rounded-md text-sm bg-white/80 border">Save</button>
+                            <button id="recheckBtn" class="px-4 py-2 rounded-md text-sm"
+                                style="background: linear-gradient(90deg,#F4978E,#FFDAB9); color:white">Re-check</button>
                         </div>
                     </div>
                 </div>
-
-                <p class="mt-6 text-sm text-[#192A56]/70">Note: This demo uses mock logic. Replace with your real model
-                    inference or API response to power recommendations.</p>
             </div>
-        </section>
 
-        <!-- HOW IT WORKS SECTION -->
+            <p class="mt-6 text-sm text-[#192A56]/70">Note: This demo uses mock logic. Replace with your real model
+                inference or API response to power recommendations.</p>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <main class="bg-peach">
         <section id="how" class="container mx-auto px-4 py-12 md:py-20">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-8">
@@ -267,32 +276,41 @@
 
                 <div class="space-y-6">
                     <div class="rounded-2xl p-6 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
-                        <h3 class="text-xl font-semibold mb-2">1. Data Collection & Training</h3>
-                        <p class="text-sm text-[#192A56]/75">We use anonymized sizing data from millions of shoppers
-                            across brands and body types to train robust models.</p>
+                        <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                            <h3 class="text-xl font-semibold mb-2">1. Data Collection & Training</h3>
+                            <p class="text-sm text-[#192A56]/75">We use anonymized sizing data from millions of shoppers
+                                across brands and body types to train robust models.</p>
+                        </div>
                     </div>
 
                     <div class="rounded-2xl p-6 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
-                        <h3 class="text-xl font-semibold mb-2">2. Feature Engineering</h3>
-                        <p class="text-sm text-[#192A56]/75">Proportions, brand consistency, and fit preferences are
-                            engineered into predictive features.</p>
+                        <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                            <h3 class="text-xl font-semibold mb-2">2. Feature Engineering</h3>
+                            <p class="text-sm text-[#192A56]/75">Proportions, brand consistency, and fit preferences are
+                                engineered into predictive features.</p>
+                        </div>
                     </div>
 
                     <div class="rounded-2xl p-6 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
-                        <h3 class="text-xl font-semibold mb-2">3. Model Architecture</h3>
-                        <p class="text-sm text-[#192A56]/75">Multi-layer networks with dropout and calibration produce
-                            size predictions and confidence scores.</p>
+                        <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                            <h3 class="text-xl font-semibold mb-2">3. Model Architecture</h3>
+                            <p class="text-sm text-[#192A56]/75">Multi-layer networks with dropout and calibration
+                                produce
+                                size predictions and confidence scores.</p>
+                        </div>
                     </div>
 
                     <div class="rounded-2xl p-6 bg-white/60 backdrop-blur-md border border-white/30 shadow-sm">
-                        <h3 class="text-xl font-semibold mb-2">4. Delivery & UX</h3>
-                        <p class="text-sm text-[#192A56]/75">Recommendations are surfaced in a clear UI with suggested
-                            size, brand mapping and a confidence indicator.</p>
+                        <div data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+                            <h3 class="text-xl font-semibold mb-2">4. Delivery & UX</h3>
+                            <p class="text-sm text-[#192A56]/75">Recommendations are surfaced in a clear UI with
+                                suggested
+                                size, brand mapping and a confidence indicator.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <!-- BACK TO TOP -->
@@ -323,17 +341,15 @@
                 <div>
                     <h4 class="font-semibold mb-3">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#technology" class="hover:text-[#F4978E]">Technology</a></li>
-                        <li><a href="#demo" class="hover:text-[#F4978E]">Demo</a></li>
-                        <li><a href="#how" class="hover:text-[#F4978E]">How It Works</a></li>
-                        <li><a href="./about.html" class="hover:text-[#F4978E]">About</a></li>
+                        <li><a href="./index.html" class="hover:text-[#F4978E]">Home</a></li>
+                        <li><a href="./howItWorks.html" class="hover:text-[#F4978E]">How It Works</a></li>
+                        <li><a href="./contact.html" class="hover:text-[#F4978E]">Contact</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="font-semibold mb-3">Company</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="./contact.html" class="hover:text-[#F4978E]">Contact</a></li>
                         <li><a href="#" class="hover:text-[#F4978E]">Privacy</a></li>
                         <li><a href="#" class="hover:text-[#F4978E]">Terms</a></li>
                     </ul>
@@ -342,13 +358,17 @@
                 <div>
                     <h4 class="font-semibold mb-3">Follow Us</h4>
                     <div class="flex gap-3">
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border hover:bg-peach"><i
                                 class="fab fa-facebook-f" style="color:#192A56"></i></a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border hover:bg-peach"><i
                                 class="fab fa-twitter" style="color:#192A56"></i></a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border hover:bg-peach"><i
                                 class="fab fa-linkedin-in" style="color:#192A56"></i></a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border"><i
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-md bg-white/60 border hover:bg-peach"><i
                                 class="fab fa-instagram" style="color:#192A56"></i></a>
                     </div>
                 </div>
@@ -387,6 +407,11 @@
                 closeIcon.style.display = "none";
             }
         });
+    </script>
+
+    <!-- Animation AOS Initialization -->
+    <script>
+        AOS.init();
     </script>
 </body>
 

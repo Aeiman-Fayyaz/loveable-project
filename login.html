@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SizeAI — Login</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#192A56',
+                        coral: '#F4978E',
+                        peach: '#FFDAB9',
+                        blush: '#FFF0EB',
+                    },
+                    boxShadow: {
+                        'soft-1': '0 6px 18px rgba(25,42,86,0.10)',
+                        'soft-2': '0 12px 30px rgba(25,42,86,0.10)',
+                        'glow-coral': '0 10px 30px rgba(244,149,142,0.18)',
+                        'inset-soft': 'inset 6px 6px 12px rgba(0,0,0,0.03), inset -6px -6px 12px rgba(255,255,255,0.7)'
+                    },
+                    backgroundImage: {
+                        'navy-grad': 'linear-gradient(180deg,#192A56 0%, #2a386f 100%)',
+                        'footer-grad': 'linear-gradient(180deg,#152041 0%, #192A56 100%)',
+                        'hero-overlay': 'linear-gradient(180deg, rgba(25,42,86,0.18), rgba(25,42,86,0.10))'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="font-[Inter] bg-blush min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 w-full z-[9999] bg-white/70 backdrop-blur-md border-b border-peach/40">
+        <nav class="mx-auto px-6 py-3 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg"
+                    style="background:linear-gradient(90deg,var(--coral,#F4978E),var(--peach,#FFDAB9)); box-shadow:0 6px 18px rgba(25,42,86,0.08)">
+                </div>
+                <div>
+                    <h1
+                        class="text-lg font-semibold bg-gradient-to-r from-coral to-peach bg-clip-text text-transparent">
+                        SizeAI</h1>
+                    <p class="text-xs text-navy/60">Fit that's personal</p>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="./index.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Home</a>
+                <a href="./howItWorks.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">How It
+                    Works</a>
+                <a href="./contact.html" class="px-3 py-2 rounded-md hover:bg-peach/30 transition text-sm">Contact</a>
+                <div class="flex items-center gap-3">
+                    <a href="./login.html" class="btn-flat px-4 py-2 text-sm font-medium">Login</a>
+                    <a href="./demo.html" class="btn-primary px-4 py-2 text-sm font-semibold">Try Demo</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- LOGIN SECTION -->
+    <main class="flex-grow flex items-center justify-center px-6 pt-24 pb-12">
+        <div
+            class="bg-white/80 backdrop-blur-md rounded-2xl shadow-soft-2 max-w-5xl w-full grid md:grid-cols-2 overflow-hidden">
+
+            <!-- Left Illustration -->
+            <div class="hidden md:flex items-center justify-center bg-gradient-to-br from-peach to-blush">
+                <img src="./assets/login.svg" alt="Login Illustration" class="w-4/5">
+            </div>
+
+            <!-- Right Form -->
+            <div class="p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-3xl font-bold text-navy mb-2">Welcome Back 👋</h2>
+                <p class="text-navy/70 mb-8 text-sm">Login to access your personalized fit recommendations</p>
+
+                <form class="space-y-5">
+                    <div>
+                        <label class="block text-sm font-medium text-navy mb-1">Username</label>
+                        <input type="text" placeholder="Enter username"
+                            class="w-full border border-peach rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-coral shadow-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-navy mb-1">Email / Contact</label>
+                        <input type="text" placeholder="Enter your email or contact"
+                            class="w-full border border-peach rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-coral shadow-sm">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-navy mb-1">Password</label>
+                        <input type="password" placeholder="Enter password"
+                            class="w-full border border-peach rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-coral shadow-sm">
+                    </div>
+
+                    <button type="submit"
+                        class="w-full mt-4 bg-coral hover:bg-peach hover:text-navy text-white font-semibold py-2 rounded-lg shadow-glow-coral transition">Login</button>
+
+                    <div class="flex justify-between text-sm mt-3">
+                        <a href="#" class="text-coral hover:underline">Forgot Password?</a>
+                        <a href="#" class="text-coral hover:underline">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gradient-to-b from-blush to-peach border-t mt-auto">
+        <div class="container mx-auto px-4 py-10">
+            <div class="grid md:grid-cols-4 gap-6 text-navy/85">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-gradient-to-r from-coral to-peach"></div>
+                        <div>
+                            <div class="font-semibold">SizeAI</div>
+                            <div class="text-sm text-navy/60">Perfect fit, every time</div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-sm text-navy/70">AI-powered size recommendations to reduce returns and increase
+                        confidence.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="./index.html" class="hover:text-coral">Home</a></li>
+                        <li><a href="./howItWorks.html" class="hover:text-coral">How It Works</a></li>
+                        <li><a href="./contact.html" class="hover:text-coral">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-3">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-coral">Privacy</a></li>
+                        <li><a href="#" class="hover:text-coral">Terms</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-3">Follow Us</h4>
+                    <div class="flex gap-3">
+                        <a href="#"
+                            class="w-9 h-9 flex items-center justify-center rounded-md bg-white/70 border hover:bg-peach">
+                            <i class="fab fa-facebook-f text-navy"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 flex items-center justify-center rounded-md bg-white/70 border hover:bg-peach">
+                            <i class="fab fa-twitter text-navy"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 flex items-center justify-center rounded-md bg-white/70 border hover:bg-peach">
+                            <i class="fab fa-linkedin-in text-navy"></i>
+                        </a>
+                        <a href="#"
+                            class="w-9 h-9 flex items-center justify-center rounded-md bg-white/70 border hover:bg-peach">
+                            <i class="fab fa-instagram text-navy"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center text-sm text-navy/60">
+                © 2025 <strong>SizeAI</strong>. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
